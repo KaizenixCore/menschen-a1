@@ -900,10 +900,14 @@ function renderWordCards(containerId, category) {
 
 /**
  * پخش صدای کلمه با استفاده از ID
+ * فقط کلمه اصلی رو می‌گه (نه جمله)
  */
 function playWordAudio(wordId) {
     const word = allWords.find(w => w.id === wordId);
     if (!word) return;
+
+    // ✅ فقط کلمه آلمانی رو پخش کن (نه جمله)
+    const textToSpeak = word.german;
 
     // اگر فایل صوتی محلی داره
     if (word.audio) {
@@ -921,28 +925,31 @@ function playWordAudio(wordId) {
 
         currentAudio.onerror = () => {
             console.warn('⚠️ فایل صوتی یافت نشد:', word.audio);
-            showToast('⚠️ فایل صوتی یافت نشد، از TTS استفاده می‌شود', 'error');
-            speakGerman(word.german);
+            // اگر فایل نبود، فقط کلمه رو با TTS بگو
+            playGoogleTTS(textToSpeak);
         };
 
         currentAudio.play().catch(() => {
-            speakGerman(word.german);
+            playGoogleTTS(textToSpeak);
         });
 
-        showToast(`🔊 ${word.german}`, 'success');
+        showToast(`🔊 ${textToSpeak}`, 'success');
     } else {
-        // اگر فایل محلی نداره، از TTS استفاده کن
-        speakGerman(word.german);
+        // اگر فایل محلی نداره، فقط کلمه رو با TTS بگو
+        playGoogleTTS(textToSpeak);
+        showToast(`🔊 ${textToSpeak}`, 'success');
     }
 }
 
 /**
- * پخش مثال کلمه
+ * پخش مثال کلمه (جمله کامل)
+ * وقتی روی دکمه 💬 کلیک می‌شه
  */
 function playWordExample(wordId) {
     const word = allWords.find(w => w.id === wordId);
     if (!word) return;
 
+    // ✅ جمله کامل رو پخش کن
     speakGerman(word.example);
     showToast(`💬 ${word.example}`, 'success');
 }
