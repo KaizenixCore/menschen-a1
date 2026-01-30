@@ -15,8 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
 
@@ -745,552 +743,552 @@
         </section>
     </div>
 
- <!-- TAB: DIALOG -->
-<div id="tab-dialog" class="tab-content">
-<!-- ============================================
-     AUDIO OVERVIEW - صوت هوشمند Google
-     ============================================ -->
-<div class="dialog-container" style="border: 3px solid var(--accent-cyan); background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
-    <div class="dialog-banner">
-        <img src="images/ai-audio-banner.jpg"
-             alt="AI Audio Overview"
-             onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80'">
-        <div class="dialog-banner-content">
-            <div>
-                <h3 class="dialog-title">🤖 صوت هوشمند (Audio Overview)</h3>
-                <p class="dialog-subtitle">تولید شده توسط Google NotebookLM AI</p>
-            </div>
-            <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
-                ✨ توصیه شده
-            </span>
-        </div>
-    </div>
-    <div class="dialog-body">
-
-        <div style="background: rgba(100, 210, 255, 0.1); border: 2px solid var(--accent-cyan); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
-            <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 8px;">💡 چرا این صوت بهتر است؟</p>
-            <ul style="color: var(--text-secondary); margin: 0; padding-right: 20px; line-height: 1.8;">
-                <li>✅ <strong>100% سینک با متن</strong> - هیچ تأخیری ندارد</li>
-                <li>✅ <strong>تلفظ واضح و آهسته</strong> - مناسب یادگیری</li>
-                <li>✅ <strong>تولید شده با AI</strong> - کیفیت عالی</li>
-                <li>✅ <strong>قابل تنظیم سرعت</strong> - 0.5x تا 2x</li>
-            </ul>
-        </div>
-
-        <!-- Audio Player -->
-        <div class="audio-player-section">
-            <div class="audio-player-header">
-                <h4>🎧 پلیر صوتی هوشمند</h4>
-                <span class="audio-filename">Audio Overview - Lesson 1</span>
-            </div>
-
-            <audio id="audio-overview-player" preload="metadata">
-                <source src="audio/lesson1/audio-overview-lesson1.mp3" type="audio/mpeg">
-            </audio>
-
-            <div class="custom-audio-player">
-                <button class="audio-btn play-pause-btn" onclick="togglePlayPause('audio-overview-player')">
-                    <span class="play-icon">▶️</span>
-                    <span class="pause-icon" style="display: none;">⏸️</span>
-                </button>
-
-                <div class="audio-progress-container" onclick="seekAudio(event, 'audio-overview-player')">
-                    <div class="audio-progress-bar">
-                        <div class="audio-progress-filled" id="progress-overview"></div>
+    <!-- TAB: DIALOG -->
+    <div id="tab-dialog" class="tab-content">
+        <!-- ============================================
+             AUDIO OVERVIEW - صوت هوشمند Google
+             ============================================ -->
+        <div class="dialog-container" style="border: 3px solid var(--accent-cyan); background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+            <div class="dialog-banner">
+                <img src="images/ai-audio-banner.jpg"
+                     alt="AI Audio Overview"
+                     onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80'">
+                <div class="dialog-banner-content">
+                    <div>
+                        <h3 class="dialog-title">🤖 صوت هوشمند (Audio Overview)</h3>
+                        <p class="dialog-subtitle">تولید شده توسط Google NotebookLM AI</p>
                     </div>
-                    <div class="audio-time">
-                        <span id="current-time-overview">0:00</span>
-                        <span id="duration-overview">0:00</span>
-                    </div>
-                </div>
-
-                <div class="audio-speed-control">
-                    <label>⚡ سرعت:</label>
-                    <select onchange="changePlaybackSpeed('audio-overview-player', this.value)">
-                        <option value="0.5">0.5x آهسته</option>
-                        <option value="0.75" selected>0.75x توصیه</option>
-                        <option value="1">1x عادی</option>
-                        <option value="1.25">1.25x سریع</option>
-                    </select>
+                    <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
+                        ✨ توصیه شده
+                    </span>
                 </div>
             </div>
-        </div>
+            <div class="dialog-body">
 
-        <!-- متن همگام -->
-        <div class="lyrics-section" style="margin-top: 24px;">
-            <div class="lyrics-header">
-                <h4>📝 متن کامل درس (سینک شده با صوت)</h4>
-            </div>
-            <div style="background: var(--bg-elevated); padding: 24px; border-radius: var(--radius-lg); line-height: 2;">
-                <p style="color: var(--accent-cyan); font-weight: 700; margin-bottom: 16px;">🎭 دیالوگ ۱:</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Woher kommst du, Paco? Aus Spanien?</p>
-                <p><strong style="color: var(--accent-pink);">Paco:</strong> Nein, ich komme aus Mexiko.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Aus Mexiko? Wow.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Und woher kommst du? Nein, Moment.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Du kommst aus Deutschland? Hm.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus der Schweiz?</p>
-                <p><strong style="color: var(--accent-green);">Yaco:</strong> Nein, ich komme aus Österreich.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus Österreich?</p>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<!-- Dialog 1: First Meeting - CORRECTED VERSION -->
-<div class="dialog-container">
-    <div class="dialog-banner">
-        <img src="images/dialog1-banner.jpg"
-             alt="First meeting"
-             onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80'">
-        <div class="dialog-banner-content">
-            <div>
-                <h3 class="dialog-title">🎭 دیالوگ ۱: ملاقات اول</h3>
-                <p class="dialog-subtitle">Erstes Treffen • Nicole, Paco & Yaco</p>
-            </div>
-        </div>
-    </div>
-    <div class="dialog-body">
-
-        <!-- Audio Player Section -->
-        <div class="audio-player-section">
-            <div class="audio-player-header">
-                <h4>🎧 پلیر صوتی کتاب</h4>
-                <span class="audio-filename">Lektion 1, 3.mp3</span>
-            </div>
-
-            <!-- Main Audio Player -->
-            <audio id="dialog-audio-1" preload="metadata">
-                <source src="audio/lesson1/Lektion 1, 3.mp3" type="audio/mpeg">
-                مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-            </audio>
-
-            <!-- Custom Audio Controls -->
-            <div class="custom-audio-player">
-                <!-- Play/Pause Button -->
-                <button class="audio-btn play-pause-btn" id="play-pause-1" onclick="togglePlayPause('dialog-audio-1')">
-                    <span class="play-icon">▶️</span>
-                    <span class="pause-icon" style="display: none;">⏸️</span>
-                </button>
-
-                <!-- Progress Bar -->
-                <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-1')">
-                    <div class="audio-progress-bar">
-                        <div class="audio-progress-filled" id="progress-1"></div>
-                    </div>
-                    <div class="audio-time">
-                        <span id="current-time-1">0:00</span>
-                        <span id="duration-1">0:00</span>
-                    </div>
+                <div style="background: rgba(100, 210, 255, 0.1); border: 2px solid var(--accent-cyan); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
+                    <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 8px;">💡 چرا این صوت بهتر است؟</p>
+                    <ul style="color: var(--text-secondary); margin: 0; padding-right: 20px; line-height: 1.8;">
+                        <li>✅ <strong>100% سینک با متن</strong> - هیچ تأخیری ندارد</li>
+                        <li>✅ <strong>تلفظ واضح و آهسته</strong> - مناسب یادگیری</li>
+                        <li>✅ <strong>تولید شده با AI</strong> - کیفیت عالی</li>
+                        <li>✅ <strong>قابل تنظیم سرعت</strong> - 0.5x تا 2x</li>
+                    </ul>
                 </div>
 
-                <!-- Speed Control -->
-                <div class="audio-speed-control">
-                    <label>⚡ سرعت:</label>
- <select id="speed-1" onchange="changePlaybackSpeed('dialog-audio-1', this.value)">
-    <option value="0.5">0.5x (خیلی آهسته)</option>
-    <option value="0.75" selected>0.75x (آهسته)</option>
-    <option value="1">1x (عادی)</option>
-    <option value="1.25">1.25x (سریع)</option>
-    <option value="1.5">1.5x (خیلی سریع)</option>
-    <option value="2">2x (فوق سریع)</option>
-</select>
-                </div>
-
-                <!-- Additional Controls -->
-                <div class="audio-extra-controls">
-                    <button class="audio-btn" onclick="skipBackward('dialog-audio-1', 5)" title="5 ثانیه قبل">
-                        ⏪ 5s
-                    </button>
-                    <button class="audio-btn" onclick="skipForward('dialog-audio-1', 5)" title="5 ثانیه بعد">
-                        5s ⏩
-                    </button>
-                    <button class="audio-btn" id="loop-btn-1" onclick="toggleLoop('dialog-audio-1')" title="تکرار">
-                        🔁
-                    </button>
-                    <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 3.mp3', 'Lektion-1-3.mp3')" title="دانلود">
-                        📥
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Synchronized Lyrics Section -->
-        <div class="lyrics-section" id="lyrics-section-1">
-            <div class="lyrics-header">
-                <h4>📝 متن همگام با صوت</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    متن به صورت خودکار با صدا همگام‌سازی می‌شود 🎵
-                </p>
-            </div>
-
-            <!-- Lyrics Lines with Timestamps -->
-           <div class="lyrics-container" id="lyrics-1">
-
-    <!-- Line 1: Nicole -->
-    <div class="lyric-line" data-time="0" data-end="3.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">?Woher kommst du, Paco</div>
-            <div class="lyric-persian">از کجا می‌آیی، پاکو؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 2: Nicole (continued) -->
-    <div class="lyric-line" data-time="3.5" data-end="5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">?Aus Spanien</div>
-            <div class="lyric-persian">از اسپانیا؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 3: Paco -->
-    <div class="lyric-line" data-time="5" data-end="8.5" data-speaker="paco">
-        <div class="speaker-badge paco-badge">
-            <img src="images/avatar-paco.jpg" alt="Paco" onerror="this.src='https://ui-avatars.com/api/?name=Paco&background=f5576c&color=fff&size=48'">
-            <span>Paco</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, ich komme aus Mexiko.</div>
-            <div class="lyric-persian">نه، من از مکزیک می‌آیم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 4: Nicole -->
-    <div class="lyric-line" data-time="8.5" data-end="11.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Aus Mexiko? Wow.</div>
-            <div class="lyric-persian">از مکزیک؟ واو.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 5: Nicole -->
-    <div class="lyric-line" data-time="11.5" data-end="13.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Und woher kommst du?</div>
-            <div class="lyric-persian">و تو از کجا می‌آیی؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 6: Nicole -->
-    <div class="lyric-line" data-time="13.5" data-end="15.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, Moment.</div>
-            <div class="lyric-persian">نه، صبر کن.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 7: Nicole -->
-    <div class="lyric-line" data-time="15.5" data-end="18.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Du kommst aus Deutschland? Hm.</div>
-            <div class="lyric-persian">تو از آلمان می‌آیی؟ هوم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 8: Nicole -->
-    <div class="lyric-line" data-time="18.5" data-end="21" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Ah, aus der Schweiz?</div>
-            <div class="lyric-persian">آها، از سوئیس؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 9: Yaco -->
-    <div class="lyric-line" data-time="21" data-end="24" data-speaker="yaco">
-        <div class="speaker-badge yaco-badge">
-            <img src="images/avatar-yaco.jpg" alt="Yaco" onerror="this.src='https://ui-avatars.com/api/?name=Yaco&background=43e97b&color=fff&size=48'">
-            <span>Yaco</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, ich komme aus Österreich.</div>
-            <div class="lyric-persian">نه، من از اتریش می‌آیم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 10: Nicole -->
-    <div class="lyric-line" data-time="24" data-end="27" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Ah, aus Österreich?</div>
-            <div class="lyric-persian">آها، از اتریش؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-</div>
-        </div>
-
-        <!-- Grammar Notes -->
-        <div class="grammar-note" style="margin-top: 32px;">
-            <span class="icon">💡</span>
-            <div>
-                <strong>نکته گرامری:</strong>
-                <br>• <strong>"Woher kommst du?"</strong> = از کجا می‌آیی؟ (غیررسمی)
-                <br>• <strong>"Aus + کشور"</strong> = از کشور (بدون حرف تعریف برای اکثر کشورها)
-                <br>• <strong>"Aus der Schweiz"</strong> = از سوئیس (با حرف تعریف)
-                <br>• <strong>"Aus Österreich"</strong> = از اتریش (بدون حرف تعریف)
-            </div>
-        </div>
-
-    </div>
-</div>
-    <!-- Dialog 2: Formal Meeting -->
-    <div class="dialog-container">
-        <div class="dialog-banner">
-            <img src="images/dialog2-banner.jpg"
-                 alt="Formal meeting"
-                 onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80'">
-            <div class="dialog-banner-content">
-                <div>
-                    <h3 class="dialog-title">👔 دیالوگ ۲: ملاقات رسمی</h3>
-                    <p class="dialog-subtitle">Formelles Treffen • Lektion 1, 5</p>
-                </div>
-            </div>
-        </div>
-        <div class="dialog-body">
-
-            <!-- Audio Player Section -->
-            <div class="audio-player-section">
-                <div class="audio-player-header">
-                    <h4>🎧 پلیر صوتی کتاب</h4>
-                    <span class="audio-filename">Lektion 1, 5.mp3</span>
-                </div>
-
-                <audio id="dialog-audio-2" preload="metadata">
-                    <source src="audio/lesson1/Lektion 1, 5.mp3" type="audio/mpeg">
-                </audio>
-
-                <div class="custom-audio-player">
-                    <button class="audio-btn play-pause-btn" id="play-pause-2" onclick="togglePlayPause('dialog-audio-2')">
-                        <span class="play-icon">▶️</span>
-                        <span class="pause-icon" style="display: none;">⏸️</span>
-                    </button>
-
-                    <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-2')">
-                        <div class="audio-progress-bar">
-                            <div class="audio-progress-filled" id="progress-2"></div>
-                        </div>
-                        <div class="audio-time">
-                            <span id="current-time-2">0:00</span>
-                            <span id="duration-2">0:00</span>
-                        </div>
+                <!-- Audio Player -->
+                <div class="audio-player-section">
+                    <div class="audio-player-header">
+                        <h4>🎧 پلیر صوتی هوشمند</h4>
+                        <span class="audio-filename">Audio Overview - Lesson 1</span>
                     </div>
 
-                    <div class="audio-speed-control">
-                        <label>⚡ سرعت:</label>
-                        <select id="speed-2" onchange="changePlaybackSpeed('dialog-audio-2', this.value)">
-                            <option value="0.5">0.5x (خیلی آهسته)</option>
-                            <option value="0.75">0.75x (آهسته)</option>
-                            <option value="1" selected>1x (عادی)</option>
-                            <option value="1.25">1.25x (سریع)</option>
-                            <option value="1.5">1.5x (خیلی سریع)</option>
-                            <option value="2">2x (فوق سریع)</option>
-                        </select>
-                    </div>
+                    <audio id="audio-overview-player" preload="metadata">
+                        <source src="audio/lesson1/audio-overview-lesson1.mp3" type="audio/mpeg">
+                    </audio>
 
-                    <div class="audio-extra-controls">
-                        <button class="audio-btn" onclick="skipBackward('dialog-audio-2', 5)">⏪ 5s</button>
-                        <button class="audio-btn" onclick="skipForward('dialog-audio-2', 5)">5s ⏩</button>
-                        <button class="audio-btn" id="loop-btn-2" onclick="toggleLoop('dialog-audio-2')">🔁</button>
-                        <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 5.mp3', 'Lektion-1-5.mp3')">📥</button>
-                    </div>
-                </div>
-            </div>
+                    <div class="custom-audio-player">
+                        <button class="audio-btn play-pause-btn" onclick="togglePlayPause('audio-overview-player')">
+                            <span class="play-icon">▶️</span>
+                            <span class="pause-icon" style="display: none;">⏸️</span>
+                        </button>
 
-            <!-- Lyrics Section -->
-            <div class="lyrics-section" id="lyrics-section-2">
-                <div class="lyrics-header">
-                    <h4>📝 متن همگام با صوت</h4>
-                </div>
-
-                <div class="lyrics-container" id="lyrics-2">
-                    <!-- این قسمت را مشابه دیالوگ 1 برای دیالوگ 2 پر کنید -->
-                    <div class="lyric-line" data-time="0" data-end="30" data-speaker="nicole">
-                        <div class="speaker-badge nicole-badge">
-                            <img src="images/avatar-nicole.jpg" alt="Nicole">
-                            <span>Nicole, Paco & Frau Wachter</span>
-                        </div>
-                        <div class="lyric-text">
-                            <div class="lyric-german">
-                                <p>مکالمه رسمی بین سه نفر...</p>
+                        <div class="audio-progress-container" onclick="seekAudio(event, 'audio-overview-player')">
+                            <div class="audio-progress-bar">
+                                <div class="audio-progress-filled" id="progress-overview"></div>
                             </div>
-                            <div class="lyric-persian">
-                                <p style="color: var(--text-muted); margin-top: 8px;">
-                                    💡 برای این دیالوگ، timestamp های دقیق را بعد از شنیدن فایل صوتی اضافه کنید
-                                </p>
+                            <div class="audio-time">
+                                <span id="current-time-overview">0:00</span>
+                                <span id="duration-overview">0:00</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-
-    <!-- Dialog 3: How are you? -->
-    <div class="dialog-container">
-        <div class="dialog-banner">
-            <img src="images/dialog3-banner.jpg"
-                 alt="Greetings"
-                 onerror="this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&q=80'">
-            <div class="dialog-banner-content">
-                <div>
-                    <h3 class="dialog-title">😊 دیالوگ ۳: احوالپرسی</h3>
-                    <p class="dialog-subtitle">Nach dem Befinden fragen • Lektion 1, 7</p>
-                </div>
-            </div>
-        </div>
-        <div class="dialog-body">
-
-            <!-- Audio Player Section -->
-            <div class="audio-player-section">
-                <div class="audio-player-header">
-                    <h4>🎧 پلیر صوتی کتاب</h4>
-                    <span class="audio-filename">Lektion 1, 7.mp3</span>
-                </div>
-
-                <audio id="dialog-audio-3" preload="metadata">
-                    <source src="audio/lesson1/Lektion 1, 7.mp3" type="audio/mpeg">
-                </audio>
-
-                <div class="custom-audio-player">
-                    <button class="audio-btn play-pause-btn" id="play-pause-3" onclick="togglePlayPause('dialog-audio-3')">
-                        <span class="play-icon">▶️</span>
-                        <span class="pause-icon" style="display: none;">⏸️</span>
-                    </button>
-
-                    <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-3')">
-                        <div class="audio-progress-bar">
-                            <div class="audio-progress-filled" id="progress-3"></div>
-                        </div>
-                        <div class="audio-time">
-                            <span id="current-time-3">0:00</span>
-                            <span id="duration-3">0:00</span>
+                        <div class="audio-speed-control">
+                            <label>⚡ سرعت:</label>
+                            <select onchange="changePlaybackSpeed('audio-overview-player', this.value)">
+                                <option value="0.5">0.5x آهسته</option>
+                                <option value="0.75" selected>0.75x توصیه</option>
+                                <option value="1">1x عادی</option>
+                                <option value="1.25">1.25x سریع</option>
+                            </select>
                         </div>
                     </div>
+                </div>
 
-                    <div class="audio-speed-control">
-                        <label>⚡ سرعت:</label>
-                        <select id="speed-3" onchange="changePlaybackSpeed('dialog-audio-3', this.value)">
-                            <option value="0.5">0.5x (خیلی آهسته)</option>
-                            <option value="0.75">0.75x (آهسته)</option>
-                            <option value="1" selected>1x (عادی)</option>
-                            <option value="1.25">1.25x (سریع)</option>
-                            <option value="1.5">1.5x (خیلی سریع)</option>
-                            <option value="2">2x (فوق سریع)</option>
-                        </select>
+                <!-- متن همگام -->
+                <div class="lyrics-section" style="margin-top: 24px;">
+                    <div class="lyrics-header">
+                        <h4>📝 متن کامل درس (سینک شده با صوت)</h4>
                     </div>
-
-                    <div class="audio-extra-controls">
-                        <button class="audio-btn" onclick="skipBackward('dialog-audio-3', 5)">⏪ 5s</button>
-                        <button class="audio-btn" onclick="skipForward('dialog-audio-3', 5)">5s ⏩</button>
-                        <button class="audio-btn" id="loop-btn-3" onclick="toggleLoop('dialog-audio-3')">🔁</button>
-                        <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 7.mp3', 'Lektion-1-7.mp3')">📥</button>
+                    <div style="background: var(--bg-elevated); padding: 24px; border-radius: var(--radius-lg); line-height: 2;">
+                        <p style="color: var(--accent-cyan); font-weight: 700; margin-bottom: 16px;">🎭 دیالوگ ۱:</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Woher kommst du, Paco? Aus Spanien?</p>
+                        <p><strong style="color: var(--accent-pink);">Paco:</strong> Nein, ich komme aus Mexiko.</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Aus Mexiko? Wow.</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Und woher kommst du? Nein, Moment.</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Du kommst aus Deutschland? Hm.</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus der Schweiz?</p>
+                        <p><strong style="color: var(--accent-green);">Yaco:</strong> Nein, ich komme aus Österreich.</p>
+                        <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus Österreich?</p>
                     </div>
                 </div>
+
             </div>
-
-            <!-- Simple Dialog Display (No Lyrics Sync) -->
-            <div style="margin-top: 32px;">
-                <h4 style="color: var(--accent-cyan); margin-bottom: 20px;">📝 متن مکالمه:</h4>
-
-                <div class="dialog-line">
-                    <div class="dialog-bubble" onclick="speakGerman('Wie geht es dir?')">
-                        <div class="dialog-de">🔊 Wie geht's?</div>
-                        <div class="dialog-pron">وی گِهتس؟</div>
-                        <div class="dialog-fa">چطوری؟</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line right">
-                    <div class="dialog-bubble" onclick="speakGerman('Gut, danke!')">
-                        <div class="dialog-de">🔊 Gut, danke!</div>
-                        <div class="dialog-pron">گوت، دانکِ!</div>
-                        <div class="dialog-fa">خوبم، ممنون!</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line">
-                    <div class="dialog-bubble" onclick="speakGerman('Wie geht es Ihnen?')">
-                        <div class="dialog-de">🔊 Wie geht es Ihnen?</div>
-                        <div class="dialog-pron">وی گِهت اِس اینِن؟</div>
-                        <div class="dialog-fa">شما چطورید؟ (رسمی)</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line right">
-                    <div class="dialog-bubble" onclick="speakGerman('Sehr gut, danke!')">
-                        <div class="dialog-de">🔊 Sehr gut, danke!</div>
-                        <div class="dialog-pron">زِر گوت، دانکِ!</div>
-                        <div class="dialog-fa">خیلی خوبم، ممنون!</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-</div>
+        <!-- Dialog 1: First Meeting -->
+        <div class="dialog-container">
+            <div class="dialog-banner">
+                <img src="images/dialog1-banner.jpg"
+                     alt="First meeting"
+                     onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80'">
+                <div class="dialog-banner-content">
+                    <div>
+                        <h3 class="dialog-title">🎭 دیالوگ ۱: ملاقات اول</h3>
+                        <p class="dialog-subtitle">Erstes Treffen • Nicole, Paco & Yaco</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-body">
+
+                <!-- Audio Player Section -->
+                <div class="audio-player-section">
+                    <div class="audio-player-header">
+                        <h4>🎧 پلیر صوتی کتاب</h4>
+                        <span class="audio-filename">Lektion 1, 3.mp3</span>
+                    </div>
+
+                    <!-- Main Audio Player -->
+                    <audio id="dialog-audio-1" preload="metadata">
+                        <source src="audio/lesson1/Lektion 1, 3.mp3" type="audio/mpeg">
+                        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+                    </audio>
+
+                    <!-- Custom Audio Controls -->
+                    <div class="custom-audio-player">
+                        <!-- Play/Pause Button -->
+                        <button class="audio-btn play-pause-btn" id="play-pause-1" onclick="togglePlayPause('dialog-audio-1')">
+                            <span class="play-icon">▶️</span>
+                            <span class="pause-icon" style="display: none;">⏸️</span>
+                        </button>
+
+                        <!-- Progress Bar -->
+                        <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-1')">
+                            <div class="audio-progress-bar">
+                                <div class="audio-progress-filled" id="progress-1"></div>
+                            </div>
+                            <div class="audio-time">
+                                <span id="current-time-1">0:00</span>
+                                <span id="duration-1">0:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Speed Control -->
+                        <div class="audio-speed-control">
+                            <label>⚡ سرعت:</label>
+                            <select id="speed-1" onchange="changePlaybackSpeed('dialog-audio-1', this.value)">
+                                <option value="0.5">0.5x (خیلی آهسته)</option>
+                                <option value="0.75" selected>0.75x (آهسته)</option>
+                                <option value="1">1x (عادی)</option>
+                                <option value="1.25">1.25x (سریع)</option>
+                                <option value="1.5">1.5x (خیلی سریع)</option>
+                                <option value="2">2x (فوق سریع)</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Controls -->
+                        <div class="audio-extra-controls">
+                            <button class="audio-btn" onclick="skipBackward('dialog-audio-1', 5)" title="5 ثانیه قبل">
+                                ⏪ 5s
+                            </button>
+                            <button class="audio-btn" onclick="skipForward('dialog-audio-1', 5)" title="5 ثانیه بعد">
+                                5s ⏩
+                            </button>
+                            <button class="audio-btn" id="loop-btn-1" onclick="toggleLoop('dialog-audio-1')" title="تکرار">
+                                🔁
+                            </button>
+                            <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 3.mp3', 'Lektion-1-3.mp3')" title="دانلود">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Synchronized Lyrics Section -->
+                <div class="lyrics-section" id="lyrics-section-1">
+                    <div class="lyrics-header">
+                        <h4>📝 متن همگام با صوت</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            متن به صورت خودکار با صدا همگام‌سازی می‌شود 🎵
+                        </p>
+                    </div>
+
+                    <!-- Lyrics Lines with Timestamps -->
+                    <div class="lyrics-container" id="lyrics-1">
+
+                        <!-- Line 1: Nicole -->
+                        <div class="lyric-line" data-time="0" data-end="3.5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">?Woher kommst du, Paco</div>
+                                <div class="lyric-persian">از کجا می‌آیی، پاکو؟</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 2: Nicole (continued) -->
+                        <div class="lyric-line" data-time="3.5" data-end="5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">?Aus Spanien</div>
+                                <div class="lyric-persian">از اسپانیا؟</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 3: Paco -->
+                        <div class="lyric-line" data-time="5" data-end="8.5" data-speaker="paco">
+                            <div class="speaker-badge paco-badge">
+                                <img src="images/avatar-paco.jpg" alt="Paco" onerror="this.src='https://ui-avatars.com/api/?name=Paco&background=f5576c&color=fff&size=48'">
+                                <span>Paco</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Nein, ich komme aus Mexiko.</div>
+                                <div class="lyric-persian">نه، من از مکزیک می‌آیم.</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 4: Nicole -->
+                        <div class="lyric-line" data-time="8.5" data-end="11.5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Aus Mexiko? Wow.</div>
+                                <div class="lyric-persian">از مکزیک؟ واو.</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 5: Nicole -->
+                        <div class="lyric-line" data-time="11.5" data-end="13.5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Und woher kommst du?</div>
+                                <div class="lyric-persian">و تو از کجا می‌آیی؟</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 6: Nicole -->
+                        <div class="lyric-line" data-time="13.5" data-end="15.5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Nein, Moment.</div>
+                                <div class="lyric-persian">نه، صبر کن.</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 7: Nicole -->
+                        <div class="lyric-line" data-time="15.5" data-end="18.5" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Du kommst aus Deutschland? Hm.</div>
+                                <div class="lyric-persian">تو از آلمان می‌آیی؟ هوم.</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 8: Nicole -->
+                        <div class="lyric-line" data-time="18.5" data-end="21" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Ah, aus der Schweiz?</div>
+                                <div class="lyric-persian">آها، از سوئیس؟</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 9: Yaco -->
+                        <div class="lyric-line" data-time="21" data-end="24" data-speaker="yaco">
+                            <div class="speaker-badge yaco-badge">
+                                <img src="images/avatar-yaco.jpg" alt="Yaco" onerror="this.src='https://ui-avatars.com/api/?name=Yaco&background=43e97b&color=fff&size=48'">
+                                <span>Yaco</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Nein, ich komme aus Österreich.</div>
+                                <div class="lyric-persian">نه، من از اتریش می‌آیم.</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                        <!-- Line 10: Nicole -->
+                        <div class="lyric-line" data-time="24" data-end="27" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
+                                <span>Nicole</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">Ah, aus Österreich?</div>
+                                <div class="lyric-persian">آها، از اتریش؟</div>
+                            </div>
+                            <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
+                                🔁
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Grammar Notes -->
+                <div class="grammar-note" style="margin-top: 32px;">
+                    <span class="icon">💡</span>
+                    <div>
+                        <strong>نکته گرامری:</strong>
+                        <br>• <strong>"Woher kommst du?"</strong> = از کجا می‌آیی؟ (غیررسمی)
+                        <br>• <strong>"Aus + کشور"</strong> = از کشور (بدون حرف تعریف برای اکثر کشورها)
+                        <br>• <strong>"Aus der Schweiz"</strong> = از سوئیس (با حرف تعریف)
+                        <br>• <strong>"Aus Österreich"</strong> = از اتریش (بدون حرف تعریف)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dialog 2: Formal Meeting -->
+        <div class="dialog-container">
+            <div class="dialog-banner">
+                <img src="images/dialog2-banner.jpg"
+                     alt="Formal meeting"
+                     onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80'">
+                <div class="dialog-banner-content">
+                    <div>
+                        <h3 class="dialog-title">👔 دیالوگ ۲: ملاقات رسمی</h3>
+                        <p class="dialog-subtitle">Formelles Treffen • Lektion 1, 5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-body">
+
+                <!-- Audio Player Section -->
+                <div class="audio-player-section">
+                    <div class="audio-player-header">
+                        <h4>🎧 پلیر صوتی کتاب</h4>
+                        <span class="audio-filename">Lektion 1, 5.mp3</span>
+                    </div>
+
+                    <audio id="dialog-audio-2" preload="metadata">
+                        <source src="audio/lesson1/Lektion 1, 5.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <div class="custom-audio-player">
+                        <button class="audio-btn play-pause-btn" id="play-pause-2" onclick="togglePlayPause('dialog-audio-2')">
+                            <span class="play-icon">▶️</span>
+                            <span class="pause-icon" style="display: none;">⏸️</span>
+                        </button>
+
+                        <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-2')">
+                            <div class="audio-progress-bar">
+                                <div class="audio-progress-filled" id="progress-2"></div>
+                            </div>
+                            <div class="audio-time">
+                                <span id="current-time-2">0:00</span>
+                                <span id="duration-2">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="audio-speed-control">
+                            <label>⚡ سرعت:</label>
+                            <select id="speed-2" onchange="changePlaybackSpeed('dialog-audio-2', this.value)">
+                                <option value="0.5">0.5x (خیلی آهسته)</option>
+                                <option value="0.75">0.75x (آهسته)</option>
+                                <option value="1" selected>1x (عادی)</option>
+                                <option value="1.25">1.25x (سریع)</option>
+                                <option value="1.5">1.5x (خیلی سریع)</option>
+                                <option value="2">2x (فوق سریع)</option>
+                            </select>
+                        </div>
+
+                        <div class="audio-extra-controls">
+                            <button class="audio-btn" onclick="skipBackward('dialog-audio-2', 5)">⏪ 5s</button>
+                            <button class="audio-btn" onclick="skipForward('dialog-audio-2', 5)">5s ⏩</button>
+                            <button class="audio-btn" id="loop-btn-2" onclick="toggleLoop('dialog-audio-2')">🔁</button>
+                            <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 5.mp3', 'Lektion-1-5.mp3')">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lyrics Section -->
+                <div class="lyrics-section" id="lyrics-section-2">
+                    <div class="lyrics-header">
+                        <h4>📝 متن همگام با صوت</h4>
+                    </div>
+
+                    <div class="lyrics-container" id="lyrics-2">
+                        <div class="lyric-line" data-time="0" data-end="30" data-speaker="nicole">
+                            <div class="speaker-badge nicole-badge">
+                                <img src="images/avatar-nicole.jpg" alt="Nicole">
+                                <span>Nicole, Paco & Frau Wachter</span>
+                            </div>
+                            <div class="lyric-text">
+                                <div class="lyric-german">
+                                    <p>مکالمه رسمی بین سه نفر...</p>
+                                </div>
+                                <div class="lyric-persian">
+                                    <p style="color: var(--text-muted); margin-top: 8px;">
+                                        💡 برای این دیالوگ، timestamp های دقیق را بعد از شنیدن فایل صوتی اضافه کنید
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dialog 3: How are you? -->
+        <div class="dialog-container">
+            <div class="dialog-banner">
+                <img src="images/dialog3-banner.jpg"
+                     alt="Greetings"
+                     onerror="this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&q=80'">
+                <div class="dialog-banner-content">
+                    <div>
+                        <h3 class="dialog-title">😊 دیالوگ ۳: احوالپرسی</h3>
+                        <p class="dialog-subtitle">Nach dem Befinden fragen • Lektion 1, 7</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-body">
+
+                <!-- Audio Player Section -->
+                <div class="audio-player-section">
+                    <div class="audio-player-header">
+                        <h4>🎧 پلیر صوتی کتاب</h4>
+                        <span class="audio-filename">Lektion 1, 7.mp3</span>
+                    </div>
+
+                    <audio id="dialog-audio-3" preload="metadata">
+                        <source src="audio/lesson1/Lektion 1, 7.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <div class="custom-audio-player">
+                        <button class="audio-btn play-pause-btn" id="play-pause-3" onclick="togglePlayPause('dialog-audio-3')">
+                            <span class="play-icon">▶️</span>
+                            <span class="pause-icon" style="display: none;">⏸️</span>
+                        </button>
+
+                        <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-3')">
+                            <div class="audio-progress-bar">
+                                <div class="audio-progress-filled" id="progress-3"></div>
+                            </div>
+                            <div class="audio-time">
+                                <span id="current-time-3">0:00</span>
+                                <span id="duration-3">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="audio-speed-control">
+                            <label>⚡ سرعت:</label>
+                            <select id="speed-3" onchange="changePlaybackSpeed('dialog-audio-3', this.value)">
+                                <option value="0.5">0.5x (خیلی آهسته)</option>
+                                <option value="0.75">0.75x (آهسته)</option>
+                                <option value="1" selected>1x (عادی)</option>
+                                <option value="1.25">1.25x (سریع)</option>
+                                <option value="1.5">1.5x (خیلی سریع)</option>
+                                <option value="2">2x (فوق سریع)</option>
+                            </select>
+                        </div>
+
+                        <div class="audio-extra-controls">
+                            <button class="audio-btn" onclick="skipBackward('dialog-audio-3', 5)">⏪ 5s</button>
+                            <button class="audio-btn" onclick="skipForward('dialog-audio-3', 5)">5s ⏩</button>
+                            <button class="audio-btn" id="loop-btn-3" onclick="toggleLoop('dialog-audio-3')">🔁</button>
+                            <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 7.mp3', 'Lektion-1-7.mp3')">📥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Dialog Display (No Lyrics Sync) -->
+                <div style="margin-top: 32px;">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: 20px;">📝 متن مکالمه:</h4>
+
+                    <div class="dialog-line">
+                        <div class="dialog-bubble" onclick="speakGerman('Wie geht es dir?')">
+                            <div class="dialog-de">🔊 Wie geht's?</div>
+                            <div class="dialog-pron">وی گِهتس؟</div>
+                            <div class="dialog-fa">چطوری؟</div>
+                        </div>
+                    </div>
+
+                    <div class="dialog-line right">
+                        <div class="dialog-bubble" onclick="speakGerman('Gut, danke!')">
+                            <div class="dialog-de">🔊 Gut, danke!</div>
+                            <div class="dialog-pron">گوت، دانکِ!</div>
+                            <div class="dialog-fa">خوبم، ممنون!</div>
+                        </div>
+                    </div>
+
+                    <div class="dialog-line">
+                        <div class="dialog-bubble" onclick="speakGerman('Wie geht es Ihnen?')">
+                            <div class="dialog-de">🔊 Wie geht es Ihnen?</div>
+                            <div class="dialog-pron">وی گِهت اِس اینِن؟</div>
+                            <div class="dialog-fa">شما چطورید؟ (رسمی)</div>
+                        </div>
+                    </div>
+
+                    <div class="dialog-line right">
+                        <div class="dialog-bubble" onclick="speakGerman('Sehr gut, danke!')">
+                            <div class="dialog-de">🔊 Sehr gut, danke!</div>
+                            <div class="dialog-pron">زِر گوت، دانکِ!</div>
+                            <div class="dialog-fa">خیلی خوبم، ممنون!</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
     <!-- TAB: ALPHABET -->
     <div id="tab-alphabet" class="tab-content">
@@ -1358,7 +1356,8 @@
                                 <tr onclick="speakGerman('Ö')" style="cursor: pointer;">
                                     <td style="font-size: 1.8rem; color: var(--accent-cyan);"><strong>Ö ö</strong></td>
                                     <td>O-Umlaut</td>
-                                    <td>/øː/</td><td>اُو (لب‌های گرد)</td>
+                                    <td>/øː/</td>
+                                    <td>اُو (لب‌های گرد)</td>
                                     <td onclick="speakGerman('schön')">schön (زیبا)</td>
                                 </tr>
                                 <tr onclick="speakGerman('Ü')" style="cursor: pointer;">
@@ -2101,10 +2100,11 @@
 
 <!-- ============================================
      JAVASCRIPT
-    <!-- ابتدا داده‌های درس ۱ لود میشن -->
-    <script src="js/data/lesson1-data.js"></script>
+     ============================================ -->
+<!-- ابتدا داده‌های درس ۱ لود میشن -->
+<script src="js/data/lesson1-data.js"></script>
 
-    <!-- بعد کدهای اصلی -->
-    <script src="js/main.js"></script>
+<!-- بعد کدهای اصلی -->
+<script src="js/main.js"></script>
 </body>
 </html>
