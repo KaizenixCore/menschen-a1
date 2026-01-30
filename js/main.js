@@ -900,58 +900,135 @@ function renderWordCards(containerId, category) {
 
 /**
  * پخش صدای کلمه با استفاده از ID
- * فقط کلمه اصلی رو می‌گه (نه جمله)
+ * اول آنلاین (Google TTS)، اگر نشد آفلاین (فایل محلی)
  */
 function playWordAudio(wordId) {
     const word = allWords.find(w => w.id === wordId);
     if (!word) return;
 
-    // ✅ فقط کلمه آلمانی رو پخش کن (نه جمله)
-    const textToSpeak = word.german;
-
-    // اگر فایل صوتی محلی داره
-    if (word.audio) {
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio = null;
-        }
-
-        currentAudio = new Audio(word.audio);
-        currentAudio.volume = 1;
-
-        currentAudio.onended = () => {
-            currentAudio = null;
-        };
-
-        currentAudio.onerror = () => {
-            console.warn('⚠️ فایل صوتی یافت نشد:', word.audio);
-            // اگر فایل نبود، فقط کلمه رو با TTS بگو
-            playGoogleTTS(textToSpeak);
-        };
-
-        currentAudio.play().catch(() => {
-            playGoogleTTS(textToSpeak);
-        });
-
-        showToast(`🔊 ${textToSpeak}`, 'success');
-    } else {
-        // اگر فایل محلی نداره، فقط کلمه رو با TTS بگو
-        playGoogleTTS(textToSpeak);
-        showToast(`🔊 ${textToSpeak}`, 'success');
+    // متوقف کردن صدای قبلی
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
     }
+    speechSynthesis.cancel();
+
+    // ✅ اول سعی کن با Google TTS آنلاین پخش کنی
+    const googleTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=${encodeURIComponent(word.german)}`;
+
+    currentAudio = new Audio(googleTTS);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
+    };
+
+    currentAudio.onerror = () => {
+        // ✅ اگر آنلاین نشد، از فایل محلی استفاده کن
+        console.warn('⚠️ آنلاین نشد، استفاده از فایل محلی...');
+        playLocalWordAudio(word.audio, word.german);
+    };
+
+    currentAudio.play().catch(() => {
+        // ✅ اگر آنلاین نشد، از فایل محلی استفاده کن
+        console.warn('⚠️ آنلاین نشد، استفاده از فایل محلی...');
+        playLocalWordAudio(word.audio, word.german);
+    });
+
+    showToast(`🔊 ${word.german}`, 'success');
 }
 
 /**
+ * پخش فایل صوتی محلی برای کلمه
+ */
+function playLocalWordAudio(audioPath, germanText) {
+    if (!audioPath) {
+        // اگر فایل محلی هم نبود، از Web Speech استفاده کن
+        speakWithWebSpeech(germanText);
+        return;
+    }
+
+    currentAudio = new Audio(audioPath);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
+    };
+
+    currentAudio.onerror = () => {
+        console.warn('⚠️ فایل محلی هم یافت نشد، استفاده از Web Speech...');
+        speakWithWebSpeech(germanText);
+    };
+
+    currentAudio.play().catch(() => {
+        speakWithWebSpeech(germanText);
+    });
+}
+/**
  * پخش مثال کلمه (جمله کامل)
- * وقتی روی دکمه 💬 کلیک می‌شه
+ * اول آنلاین (Google TTS)، اگر نشد آفلاین (فایل محلی)
  */
 function playWordExample(wordId) {
     const word = allWords.find(w => w.id === wordId);
     if (!word) return;
 
-    // ✅ جمله کامل رو پخش کن
-    speakGerman(word.example);
+    // متوقف کردن صدای قبلی
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+    }
+    speechSynthesis.cancel();
+
+    // ✅ اول سعی کن با Google TTS آنلاین پخش کنی
+    const googleTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=${encodeURIComponent(word.example)}`;
+
+    currentAudio = new Audio(googleTTS);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
+    };
+
+    currentAudio.onerror = () => {
+        // ✅ اگر آنلاین نشد، از فایل محلی استفاده کن
+        console.warn('⚠️ آنلاین نشد، استفاده از فایل محلی...');
+        playLocalExampleAudio(word.audioExample, word.example);
+    };
+
+    currentAudio.play().catch(() => {
+        // ✅ اگر آنلاین نشد، از فایل محلی استفاده کن
+        console.warn('⚠️ آنلاین نشد، استفاده از فایل محلی...');
+        playLocalExampleAudio(word.audioExample, word.example);
+    });
+
     showToast(`💬 ${word.example}`, 'success');
+}
+
+/**
+ * پخش فایل صوتی محلی برای مثال
+ */
+function playLocalExampleAudio(audioPath, exampleText) {
+    if (!audioPath) {
+        // اگر فایل محلی هم نبود، از Web Speech استفاده کن
+        speakWithWebSpeech(exampleText);
+        return;
+    }
+
+    currentAudio = new Audio(audioPath);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
+    };
+
+    currentAudio.onerror = () => {
+        console.warn('⚠️ فایل محلی هم یافت نشد، استفاده از Web Speech...');
+        speakWithWebSpeech(exampleText);
+    };
+
+    currentAudio.play().catch(() => {
+        speakWithWebSpeech(exampleText);
+    });
 }
 function getCategoryLabel(category) {
     const labels = {
