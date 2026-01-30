@@ -10,19 +10,20 @@
 
 const allWords = [
     // Greetings - احوالپرسی‌ها
-    { 
-        id: 1, 
-        german: 'Hallo', 
-        ipa: '/haˈloː/', 
-        pron: 'هالو', 
-        meaning: 'سلام (غیررسمی)', 
-        emoji: '👋', 
-        example: 'Hallo! Wie geht es dir?', 
-        exampleFa: 'سلام! چطوری؟', 
-        category: 'greeting', 
-        image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
-        audio: 'audio/lesson1/vocab/hallo.mp3'  // ✅ اضافه شد
-    },
+{ 
+    id: 1, 
+    german: 'Hallo', 
+    ipa: '/haˈloː/', 
+    pron: 'هالو', 
+    meaning: 'سلام (غیررسمی)', 
+    emoji: '👋', 
+    example: 'Hallo! Wie geht es dir?', 
+    exampleFa: 'سلام! چطوری؟', 
+    category: 'greeting', 
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
+    audio: 'audio/lesson1/vocab/hallo.mp3',
+    audioExample: 'audio/lesson1/vocab/hallo-example.mp3'
+},
     { 
         id: 2, 
         german: 'Guten Morgen', 
