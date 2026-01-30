@@ -306,15 +306,97 @@ function closeSidebar() {
 // ============================================
 // TEXT-TO-SPEECH - صدای واقعی آلمانی
 // ============================================
+// ============================================
+// TEXT-TO-SPEECH - با پشتیبانی از فایل صوتی محلی
+// ============================================
+
+/**
+ * پخش صدای آلمانی - ابتدا فایل محلی، سپس Google TTS
+ */
 function speakGerman(text, callback = null) {
+    // متوقف کردن صدای قبلی
     if (currentAudio) {
         currentAudio.pause();
         currentAudio = null;
     }
-
     speechSynthesis.cancel();
 
-    // Google Translate TTS - صدای واقعی آلمانی
+    // پیدا کردن کلمه در داده‌ها
+    const word = findWordByGerman(text);
+    
+    // اگر فایل صوتی محلی وجود داره، اول اون رو پخش کن
+    if (word && word.audio) {
+        playLocalAudio(word.audio, text, callback);
+    } else {
+        // اگر فایل محلی نیست، از Google TTS استفاده کن
+        playGoogleTTS(text, callback);
+    }
+}
+
+/**
+ * پیدا کردن کلمه در داده‌ها بر اساس متن آلمانی
+ */
+function findWordByGerman(text) {
+    // جستجو در واژگان
+    if (typeof allWords !== 'undefined') {
+        const found = allWords.find(w => 
+            w.german.toLowerCase() === text.toLowerCase() ||
+            w.example.toLowerCase().includes(text.toLowerCase())
+        );
+        if (found) return found;
+    }
+    
+    // جستجو در کشورها
+    if (typeof countries !== 'undefined') {
+        const found = countries.find(c => 
+            c.german.toLowerCase() === text.toLowerCase()
+        );
+        if (found) return found;
+    }
+    
+    // جستجو در دیالوگ‌ها
+    if (typeof lesson1Dialogs !== 'undefined') {
+        for (const dialog of lesson1Dialogs) {
+            for (const line of dialog.lines) {
+                if (line.german.toLowerCase() === text.toLowerCase()) {
+                    return line;
+                }
+            }
+        }
+    }
+    
+    return null;
+}
+
+/**
+ * پخش فایل صوتی محلی
+ */
+function playLocalAudio(audioPath, text, callback) {
+    currentAudio = new Audio(audioPath);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
+        if (callback) callback();
+    };
+
+    currentAudio.onerror = (e) => {
+        console.warn('⚠️ فایل صوتی محلی یافت نشد:', audioPath);
+        console.warn('🔄 استفاده از Google TTS...');
+        // اگر فایل محلی کار نکرد، از Google TTS استفاده کن
+        playGoogleTTS(text, callback);
+    };
+
+    currentAudio.play().catch((err) => {
+        console.warn('⚠️ خطا در پخش فایل محلی:', err);
+        playGoogleTTS(text, callback);
+    });
+}
+
+/**
+ * پخش با Google TTS
+ */
+function playGoogleTTS(text, callback) {
     const googleTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=${encodeURIComponent(text)}`;
 
     currentAudio = new Audio(googleTTS);
@@ -326,6 +408,7 @@ function speakGerman(text, callback = null) {
     };
 
     currentAudio.onerror = () => {
+        console.warn('⚠️ Google TTS هم کار نکرد، استفاده از Web Speech...');
         speakWithWebSpeech(text, callback);
     };
 
