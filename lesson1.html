@@ -1,2107 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#030014">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="درس ۱: سلام! من ... - آموزش زبان آلمانی">
-    <title>🎓 درس ۱: Hallo! Ich bin... | Menschen A1.1</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-
-</head>
-<body>
-
-<!-- ============================================
-     HEADER WITH MENU
-     ============================================ -->
-<header class="header">
-    <div class="header-content">
-        <a href="index.html" class="logo">
-            <div class="logo-icon">🎓</div>
-            <div>
-                <div class="logo-text">Menschen A1.1</div>
-                <div class="logo-subtitle">درس ۱</div>
-            </div>
-        </a>
-        <div class="header-actions">
-            <button class="menu-btn" onclick="toggleSidebar()" title="منو">
-                ☰
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- ============================================
-     SIDEBAR MENU
-     ============================================ -->
-<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
-<aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <h3 class="sidebar-title">📚 منوی درس‌ها</h3>
-        <button class="sidebar-close" onclick="closeSidebar()">✕</button>
-    </div>
-    <div class="sidebar-content">
-        <!-- Navigation Section -->
-        <div class="sidebar-section">
-            <h4 class="sidebar-section-title">ناوبری</h4>
-            <ul class="sidebar-menu">
-                <li class="sidebar-menu-item">
-                    <a href="index.html" class="sidebar-menu-link">
-                        <span class="icon">🏠</span>
-                        <span class="text">صفحه اصلی</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-vocab" class="sidebar-menu-link" onclick="showTab('vocab', this); closeSidebar();">
-                        <span class="icon">📖</span>
-                        <span class="text">واژگان</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-grammar" class="sidebar-menu-link" onclick="showTab('grammar', this); closeSidebar();">
-                        <span class="icon">📐</span>
-                        <span class="text">گرامر</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-dialog" class="sidebar-menu-link" onclick="showTab('dialog', this); closeSidebar();">
-                        <span class="icon">💬</span>
-                        <span class="text">مکالمه</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-alphabet" class="sidebar-menu-link" onclick="showTab('alphabet', this); closeSidebar();">
-                        <span class="icon">🔤</span>
-                        <span class="text">الفبا</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-countries" class="sidebar-menu-link" onclick="showTab('countries', this); closeSidebar();">
-                        <span class="icon">🌍</span>
-                        <span class="text">کشورها</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-flashcard" class="sidebar-menu-link" onclick="showTab('flashcard', this); closeSidebar();">
-                        <span class="icon">🃏</span>
-                        <span class="text">فلش‌کارت</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-exercises" class="sidebar-menu-link" onclick="showTab('exercises', this); closeSidebar();">
-                        <span class="icon">📝</span>
-                        <span class="text">تمرین‌ها</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="#tab-quiz" class="sidebar-menu-link" onclick="showTab('quiz', this); closeSidebar();">
-                        <span class="icon">📝</span>
-                        <span class="text">آزمون</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Lessons Section -->
-        <div class="sidebar-section">
-            <h4 class="sidebar-section-title">درس‌ها</h4>
-            <ul class="sidebar-menu">
-                <li class="sidebar-menu-item">
-                    <a href="lesson1.html" class="sidebar-menu-link active">
-                        <span class="icon">1️⃣</span>
-                        <span class="text">درس ۱: سلام</span>
-                        <span class="badge">فعال</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson2.html" class="sidebar-menu-link">
-                        <span class="icon">2️⃣</span>
-                        <span class="text">درس ۲: خانواده</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson3.html" class="sidebar-menu-link">
-                        <span class="icon">3️⃣</span>
-                        <span class="text">درس ۳: غذا</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson4.html" class="sidebar-menu-link">
-                        <span class="icon">4️⃣</span>
-                        <span class="text">درس ۴: خانه</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson5.html" class="sidebar-menu-link">
-                        <span class="icon">5️⃣</span>
-                        <span class="text">درس ۵: روز من</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson6.html" class="sidebar-menu-link">
-                        <span class="icon">6️⃣</span>
-                        <span class="text">درس ۶: سرگرمی</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson7.html" class="sidebar-menu-link">
-                        <span class="icon">7️⃣</span>
-                        <span class="text">درس ۷: یادگیری</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-                <li class="sidebar-menu-item">
-                    <a href="lesson8.html" class="sidebar-menu-link">
-                        <span class="icon">8️⃣</span>
-                        <span class="text">درس ۸: کار</span>
-                        <span class="badge">🔒</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</aside>
-
-<!-- ============================================
-     HERO
-     ============================================ -->
-<section class="hero">
-    <div class="hero-bg">
-        <img src="images/lesson1-hero.jpg"
-             alt="Hallo! Ich bin..."
-             onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80'">
-    </div>
-    <div class="hero-content">
-        <div class="hero-badge">
-            <span>📚</span>
-            <span>Lektion 1 • Menschen A1.1</span>
-        </div>
-        <h1 class="hero-title">Hallo! Ich bin...</h1>
-        <p class="hero-subtitle">👋 سلام! من ... هستم</p>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <div class="stat-value">40</div>
-                <div class="stat-label">واژه</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">3</div>
-                <div class="stat-label">فعل</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">8</div>
-                <div class="stat-label">کشور</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">4</div>
-                <div class="stat-label">دیالوگ</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     NAVIGATION TABS
-     ============================================ -->
-<div class="nav-wrapper">
-    <nav class="nav">
-        <button class="nav-btn active" onclick="showTab('vocab', this)">
-            <span class="icon">📖</span>
-            <span class="text">واژگان</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('grammar', this)">
-            <span class="icon">📐</span>
-            <span class="text">گرامر</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('dialog', this)">
-            <span class="icon">💬</span>
-            <span class="text">مکالمه</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('alphabet', this)">
-            <span class="icon">🔤</span>
-            <span class="text">الفبا</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('countries', this)">
-            <span class="icon">🌍</span>
-            <span class="text">کشورها</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('flashcard', this)">
-            <span class="icon">🃏</span>
-            <span class="text">فلش‌کارت</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('exercises', this)">
-            <span class="icon">📝</span>
-            <span class="text">تمرین‌ها</span>
-        </button>
-        <button class="nav-btn" onclick="showTab('quiz', this)">
-            <span class="icon">🎯</span>
-            <span class="text">آزمون</span>
-        </button>
-    </nav>
-</div>
-
-<!-- ============================================
-     MAIN CONTENT
-     ============================================ -->
-<main class="container">
-
-    <!-- TAB: VOCABULARY -->
-    <div id="tab-vocab" class="tab-content active">
-
-        <!-- Greetings Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/greeting-banner.jpg"
-                     alt="Greetings"
-                     onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">👋 سلام و احوالپرسی</h2>
-                        <p class="section-banner-subtitle">Begrüßung • 5 عبارت</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-greeting"></div>
-            </div>
-        </section>
-
-        <!-- Farewell Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/farewell-banner.jpg"
-                     alt="Farewell"
-                     onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">✌️ خداحافظی</h2>
-                        <p class="section-banner-subtitle">Verabschiedung • 2 عبارت</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-farewell"></div>
-            </div>
-        </section>
-
-        <!-- Pronouns Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/pronouns-banner.jpg"
-                     alt="Pronouns"
-                     onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">👤 ضمایر شخصی</h2>
-                        <p class="section-banner-subtitle">Personalpronomen • 9 ضمیر</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-pronoun"></div>
-            </div>
-        </section>
-
-        <!-- Questions Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/questions-banner.jpg"
-                     alt="Questions"
-                     onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">❓ سؤالات مهم</h2>
-                        <p class="section-banner-subtitle">Wichtige Fragen • 9 سؤال</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-question"></div>
-            </div>
-        </section>
-
-        <!-- Answers Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/answers-banner.jpg"
-                     alt="Answers"
-                     onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">💬 جواب‌های احوالپرسی</h2>
-                        <p class="section-banner-subtitle">Antworten • 6 جواب</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-answer"></div>
-            </div>
-        </section>
-
-        <!-- Phrases Section -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/phrases-banner.jpg"
-                     alt="Phrases"
-                     onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">📝 عبارات کاربردی</h2>
-                        <p class="section-banner-subtitle">Nützliche Ausdrücke • 9 عبارت</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="words-grid" id="grid-phrase"></div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- TAB: GRAMMAR -->
-    <div id="tab-grammar" class="tab-content">
-
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/grammar-banner.jpg"
-                     alt="Grammar"
-                     onerror="this.src='https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">📐 گرامر درس ۱</h2>
-                        <p class="section-banner-subtitle">سه فعل اصلی + ضمایر + ساختار جمله</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <!-- Verb sein -->
-                <div class="grammar-box blue">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🔵</div>
-                        <div>
-                            <h3 class="grammar-title">فعل sein (بودن) - مهم‌ترین فعل آلمانی</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>ضمیر</th>
-                                    <th>صرف</th>
-                                    <th>تلفظ</th>
-                                    <th>مثال</th>
-                                    <th>ترجمه</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich bin Ali')">
-                                    <td>ich</td>
-                                    <td class="highlight">bin</td>
-                                    <td>بین</td>
-                                    <td>Ich bin Ali.</td>
-                                    <td>من علی هستم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Du bist Maria')">
-                                    <td>du</td>
-                                    <td class="highlight">bist</td>
-                                    <td>بیست</td>
-                                    <td>Du bist Maria.</td>
-                                    <td>تو ماریا هستی.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Er ist Lehrer')">
-                                    <td>er/sie/es</td>
-                                    <td class="highlight">ist</td>
-                                    <td>ایست</td>
-                                    <td>Er ist Lehrer.</td>
-                                    <td>او معلم است.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wir sind Freunde')">
-                                    <td>wir</td>
-                                    <td class="highlight">sind</td>
-                                    <td>زیند</td>
-                                    <td>Wir sind Freunde.</td>
-                                    <td>ما دوست هستیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ihr seid toll')">
-                                    <td>ihr</td>
-                                    <td class="highlight">seid</td>
-                                    <td>زاید</td>
-                                    <td>Ihr seid toll!</td>
-                                    <td>شما عالی هستید!</td>
-                                </tr>
-                                <tr onclick="speakGerman('Sie sind aus Iran')">
-                                    <td>sie/Sie</td>
-                                    <td class="highlight">sind</td>
-                                    <td>زیند</td>
-                                    <td>Sie sind aus Iran.</td>
-                                    <td>آنها/شما از ایران هستند.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="grammar-note">
-                            <span class="icon">⚠️</span>
-                            <div>
-                                <strong>نکته مهم:</strong> فعل sein نامنظم است و الگوی معمولی را دنبال نمی‌کند. باید حفظ شود!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Verb heißen -->
-                <div class="grammar-box purple">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🟣</div>
-                        <div>
-                            <h3 class="grammar-title">فعل heißen (نامیده شدن)</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>ضمیر</th>
-                                    <th>صرف</th>
-                                    <th>تلفظ</th>
-                                    <th>مثال</th>
-                                    <th>ترجمه</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich heiße Ali')">
-                                    <td>ich</td>
-                                    <td class="highlight">heiße</td>
-                                    <td>هایسِ</td>
-                                    <td>Ich heiße Ali.</td>
-                                    <td>اسم من علی است.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wie heißt du')">
-                                    <td>du</td>
-                                    <td class="highlight">heißt</td>
-                                    <td>هایست</td>
-                                    <td>Wie heißt du?</td>
-                                    <td>اسمت چیه؟</td>
-                                </tr>
-                                <tr onclick="speakGerman('Sie heißt Maria')">
-                                    <td>er/sie/es</td>
-                                    <td class="highlight">heißt</td>
-                                    <td>هایست</td>
-                                    <td>Sie heißt Maria.</td>
-                                    <td>اسم او ماریا است.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wir heißen Schmidt')">
-                                    <td>wir</td>
-                                    <td class="highlight">heißen</td>
-                                    <td>هایسِن</td>
-                                    <td>Wir heißen Schmidt.</td>
-                                    <td>اسم ما اشمیت است.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wie heißt ihr')">
-                                    <td>ihr</td>
-                                    <td class="highlight">heißt</td>
-                                    <td>هایست</td>
-                                    <td>Wie heißt ihr?</td>
-                                    <td>اسم شما چیه؟</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wie heißen Sie')">
-                                    <td>sie/Sie</td>
-                                    <td class="highlight">heißen</td>
-                                    <td>هایسِن</td>
-                                    <td>Wie heißen Sie?</td>
-                                    <td>اسم شما چیست؟</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="grammar-note">
-                            <span class="icon">💡</span>
-                            <div>
-                                <strong>نکته:</strong> حرف <strong>ß</strong> (اِس‌تسِت) صدای «س» می‌دهد و بعد از مصوت‌های بلند می‌آید.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Verb kommen -->
-                <div class="grammar-box gold">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🟡</div>
-                        <div>
-                            <h3 class="grammar-title">فعل kommen (آمدن)</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>ضمیر</th>
-                                    <th>صرف</th>
-                                    <th>تلفظ</th>
-                                    <th>مثال</th>
-                                    <th>ترجمه</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich komme aus Iran')">
-                                    <td>ich</td>
-                                    <td class="highlight">komme</td>
-                                    <td>کُمِ</td>
-                                    <td>Ich komme aus Iran.</td>
-                                    <td>من از ایران می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Woher kommst du')">
-                                    <td>du</td>
-                                    <td class="highlight">kommst</td>
-                                    <td>کُمست</td>
-                                    <td>Woher kommst du?</td>
-                                    <td>از کجا می‌آیی؟</td>
-                                </tr>
-                                <tr onclick="speakGerman('Er kommt aus Mexiko')">
-                                    <td>er/sie/es</td>
-                                    <td class="highlight">kommt</td>
-                                    <td>کُمت</td>
-                                    <td>Er kommt aus Mexiko.</td>
-                                    <td>او از مکزیک می‌آید.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wir kommen aus Deutschland')">
-                                    <td>wir</td>
-                                    <td class="highlight">kommen</td>
-                                    <td>کُمِن</td>
-                                    <td>Wir kommen aus Deutschland.</td>
-                                    <td>ما از آلمان می‌آییم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Woher kommt ihr')">
-                                    <td>ihr</td>
-                                    <td class="highlight">kommt</td>
-                                    <td>کُمت</td>
-                                    <td>Woher kommt ihr?</td>
-                                    <td>از کجا می‌آیید؟</td>
-                                </tr>
-                                <tr onclick="speakGerman('Woher kommen Sie')">
-                                    <td>sie/Sie</td>
-                                    <td class="highlight">kommen</td>
-                                    <td>کُمِن</td>
-                                    <td>Woher kommen Sie?</td>
-                                    <td>از کجا می‌آیید؟</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="grammar-note">
-                            <span class="icon">📝</span>
-                            <div>
-                                <strong>فرمول صرف فعل منظم:</strong> ریشه فعل (komm) + پسوند شخصی (-e, -st, -t, -en, -t, -en)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- du vs Sie -->
-                <div class="grammar-box orange">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">👔</div>
-                        <div>
-                            <h3 class="grammar-title">du یا Sie؟ (غیررسمی یا رسمی)</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>موضوع</th>
-                                    <th style="color: var(--accent-cyan);">du (غیررسمی) 👤</th>
-                                    <th style="color: var(--accent-yellow);">Sie (رسمی) 👔</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>کی استفاده می‌شود؟</strong></td>
-                                    <td>دوستان، خانواده، بچه‌ها، همکلاسی‌ها</td>
-                                    <td>غریبه‌ها، بزرگترها، محیط کار، رسمی</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wie heißt du')">
-                                    <td><strong>اسم چیه؟</strong></td>
-                                    <td>Wie heißt <span class="highlight">du</span>?</td>
-                                    <td>Wie heißen <span class="highlight">Sie</span>?</td>
-                                </tr>
-                                <tr onclick="speakGerman('Woher kommst du')">
-                                    <td><strong>از کجایی؟</strong></td>
-                                    <td>Woher kommst <span class="highlight">du</span>?</td>
-                                    <td>Woher kommen <span class="highlight">Sie</span>?</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wie geht es dir')">
-                                    <td><strong>چطوری؟</strong></td>
-                                    <td>Wie geht es <span class="highlight">dir</span>?</td>
-                                    <td>Wie geht es <span class="highlight">Ihnen</span>?</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>خطاب</strong></td>
-                                    <td>فقط اسم کوچک: Nicole, Paco</td>
-                                    <td>Herr/Frau + نام خانوادگی</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>خداحافظی</strong></td>
-                                    <td>Tschüs!</td>
-                                    <td>Auf Wiedersehen!</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="grammar-note">
-                            <span class="icon">⚠️</span>
-                            <div>
-                                <strong>خیلی مهم:</strong> <span style="color: var(--accent-yellow);">Sie</span> (رسمی) همیشه با <strong>حرف بزرگ</strong> نوشته می‌شود!
-                                <br><span style="color: var(--text-muted);">sie</span> (او مؤنث / آنها) با <strong>حرف کوچک</strong> نوشته می‌شود.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sentence Structure -->
-                <div class="grammar-box green">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🏗️</div>
-                        <div>
-                            <h3 class="grammar-title">ساختار جمله در آلمانی</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 15px;">📌 جمله خبری:</h4>
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>Position 1</th>
-                                    <th style="color: var(--accent-green);">Position 2 (فعل) ⭐</th>
-                                    <th>بقیه جمله</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich bin Ali')">
-                                    <td>Ich</td>
-                                    <td class="highlight">bin</td>
-                                    <td>Ali.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Du kommst aus Spanien')">
-                                    <td>Du</td>
-                                    <td class="highlight">kommst</td>
-                                    <td>aus Spanien.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Er heißt Paco')">
-                                    <td>Er</td>
-                                    <td class="highlight">heißt</td>
-                                    <td>Paco.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4 style="color: var(--accent-purple); margin: 30px 0 15px;">📌 جمله سؤالی با کلمه پرسشی:</h4>
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th style="color: var(--accent-purple);">کلمه پرسشی (W-Frage)</th>
-                                    <th style="color: var(--accent-green);">Position 2 (فعل) ⭐</th>
-                                    <th>بقیه جمله</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Wie heißen Sie')">
-                                    <td style="color: var(--accent-purple);">Wie</td>
-                                    <td class="highlight">heißen</td>
-                                    <td>Sie?</td>
-                                </tr>
-                                <tr onclick="speakGerman('Woher kommst du')">
-                                    <td style="color: var(--accent-purple);">Woher</td>
-                                    <td class="highlight">kommst</td>
-                                    <td>du?</td>
-                                </tr>
-                                <tr onclick="speakGerman('Wer ist das')">
-                                    <td style="color: var(--accent-purple);">Wer</td>
-                                    <td class="highlight">ist</td>
-                                    <td>das?</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="grammar-note">
-                            <span class="icon">🔑</span>
-                            <div>
-                                <strong>قانون طلایی:</strong> در زبان آلمانی، <span style="color: var(--accent-green);">فعل همیشه در جایگاه دوم</span> قرار می‌گیرد!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </div>
-
- <!-- TAB: DIALOG -->
-<div id="tab-dialog" class="tab-content">
-<!-- ============================================
-     AUDIO OVERVIEW - صوت هوشمند Google
-     ============================================ -->
-<div class="dialog-container" style="border: 3px solid var(--accent-cyan); background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
-    <div class="dialog-banner">
-        <img src="images/ai-audio-banner.jpg"
-             alt="AI Audio Overview"
-             onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80'">
-        <div class="dialog-banner-content">
-            <div>
-                <h3 class="dialog-title">🤖 صوت هوشمند (Audio Overview)</h3>
-                <p class="dialog-subtitle">تولید شده توسط Google NotebookLM AI</p>
-            </div>
-            <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
-                ✨ توصیه شده
-            </span>
-        </div>
-    </div>
-    <div class="dialog-body">
-
-        <div style="background: rgba(100, 210, 255, 0.1); border: 2px solid var(--accent-cyan); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
-            <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 8px;">💡 چرا این صوت بهتر است؟</p>
-            <ul style="color: var(--text-secondary); margin: 0; padding-right: 20px; line-height: 1.8;">
-                <li>✅ <strong>100% سینک با متن</strong> - هیچ تأخیری ندارد</li>
-                <li>✅ <strong>تلفظ واضح و آهسته</strong> - مناسب یادگیری</li>
-                <li>✅ <strong>تولید شده با AI</strong> - کیفیت عالی</li>
-                <li>✅ <strong>قابل تنظیم سرعت</strong> - 0.5x تا 2x</li>
-            </ul>
-        </div>
-
-        <!-- Audio Player -->
-        <div class="audio-player-section">
-            <div class="audio-player-header">
-                <h4>🎧 پلیر صوتی هوشمند</h4>
-                <span class="audio-filename">Audio Overview - Lesson 1</span>
-            </div>
-
-            <audio id="audio-overview-player" preload="metadata">
-                <source src="audio/lesson1/audio-overview-lesson1.mp3" type="audio/mpeg">
-            </audio>
-
-            <div class="custom-audio-player">
-                <button class="audio-btn play-pause-btn" onclick="togglePlayPause('audio-overview-player')">
-                    <span class="play-icon">▶️</span>
-                    <span class="pause-icon" style="display: none;">⏸️</span>
-                </button>
-
-                <div class="audio-progress-container" onclick="seekAudio(event, 'audio-overview-player')">
-                    <div class="audio-progress-bar">
-                        <div class="audio-progress-filled" id="progress-overview"></div>
-                    </div>
-                    <div class="audio-time">
-                        <span id="current-time-overview">0:00</span>
-                        <span id="duration-overview">0:00</span>
-                    </div>
-                </div>
-
-                <div class="audio-speed-control">
-                    <label>⚡ سرعت:</label>
-                    <select onchange="changePlaybackSpeed('audio-overview-player', this.value)">
-                        <option value="0.5">0.5x آهسته</option>
-                        <option value="0.75" selected>0.75x توصیه</option>
-                        <option value="1">1x عادی</option>
-                        <option value="1.25">1.25x سریع</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- متن همگام -->
-        <div class="lyrics-section" style="margin-top: 24px;">
-            <div class="lyrics-header">
-                <h4>📝 متن کامل درس (سینک شده با صوت)</h4>
-            </div>
-            <div style="background: var(--bg-elevated); padding: 24px; border-radius: var(--radius-lg); line-height: 2;">
-                <p style="color: var(--accent-cyan); font-weight: 700; margin-bottom: 16px;">🎭 دیالوگ ۱:</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Woher kommst du, Paco? Aus Spanien?</p>
-                <p><strong style="color: var(--accent-pink);">Paco:</strong> Nein, ich komme aus Mexiko.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Aus Mexiko? Wow.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Und woher kommst du? Nein, Moment.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Du kommst aus Deutschland? Hm.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus der Schweiz?</p>
-                <p><strong style="color: var(--accent-green);">Yaco:</strong> Nein, ich komme aus Österreich.</p>
-                <p><strong style="color: var(--accent-purple);">Nicole:</strong> Ah, aus Österreich?</p>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<!-- Dialog 1: First Meeting - CORRECTED VERSION -->
-<div class="dialog-container">
-    <div class="dialog-banner">
-        <img src="images/dialog1-banner.jpg"
-             alt="First meeting"
-             onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80'">
-        <div class="dialog-banner-content">
-            <div>
-                <h3 class="dialog-title">🎭 دیالوگ ۱: ملاقات اول</h3>
-                <p class="dialog-subtitle">Erstes Treffen • Nicole, Paco & Yaco</p>
-            </div>
-        </div>
-    </div>
-    <div class="dialog-body">
-
-        <!-- Audio Player Section -->
-        <div class="audio-player-section">
-            <div class="audio-player-header">
-                <h4>🎧 پلیر صوتی کتاب</h4>
-                <span class="audio-filename">Lektion 1, 3.mp3</span>
-            </div>
-
-            <!-- Main Audio Player -->
-            <audio id="dialog-audio-1" preload="metadata">
-                <source src="audio/lesson1/Lektion 1, 3.mp3" type="audio/mpeg">
-                مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-            </audio>
-
-            <!-- Custom Audio Controls -->
-            <div class="custom-audio-player">
-                <!-- Play/Pause Button -->
-                <button class="audio-btn play-pause-btn" id="play-pause-1" onclick="togglePlayPause('dialog-audio-1')">
-                    <span class="play-icon">▶️</span>
-                    <span class="pause-icon" style="display: none;">⏸️</span>
-                </button>
-
-                <!-- Progress Bar -->
-                <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-1')">
-                    <div class="audio-progress-bar">
-                        <div class="audio-progress-filled" id="progress-1"></div>
-                    </div>
-                    <div class="audio-time">
-                        <span id="current-time-1">0:00</span>
-                        <span id="duration-1">0:00</span>
-                    </div>
-                </div>
-
-                <!-- Speed Control -->
-                <div class="audio-speed-control">
-                    <label>⚡ سرعت:</label>
- <select id="speed-1" onchange="changePlaybackSpeed('dialog-audio-1', this.value)">
-    <option value="0.5">0.5x (خیلی آهسته)</option>
-    <option value="0.75" selected>0.75x (آهسته)</option>
-    <option value="1">1x (عادی)</option>
-    <option value="1.25">1.25x (سریع)</option>
-    <option value="1.5">1.5x (خیلی سریع)</option>
-    <option value="2">2x (فوق سریع)</option>
-</select>
-                </div>
-
-                <!-- Additional Controls -->
-                <div class="audio-extra-controls">
-                    <button class="audio-btn" onclick="skipBackward('dialog-audio-1', 5)" title="5 ثانیه قبل">
-                        ⏪ 5s
-                    </button>
-                    <button class="audio-btn" onclick="skipForward('dialog-audio-1', 5)" title="5 ثانیه بعد">
-                        5s ⏩
-                    </button>
-                    <button class="audio-btn" id="loop-btn-1" onclick="toggleLoop('dialog-audio-1')" title="تکرار">
-                        🔁
-                    </button>
-                    <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 3.mp3', 'Lektion-1-3.mp3')" title="دانلود">
-                        📥
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Synchronized Lyrics Section -->
-        <div class="lyrics-section" id="lyrics-section-1">
-            <div class="lyrics-header">
-                <h4>📝 متن همگام با صوت</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    متن به صورت خودکار با صدا همگام‌سازی می‌شود 🎵
-                </p>
-            </div>
-
-            <!-- Lyrics Lines with Timestamps -->
-           <div class="lyrics-container" id="lyrics-1">
-
-    <!-- Line 1: Nicole -->
-    <div class="lyric-line" data-time="0" data-end="3.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">?Woher kommst du, Paco</div>
-            <div class="lyric-persian">از کجا می‌آیی، پاکو؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 2: Nicole (continued) -->
-    <div class="lyric-line" data-time="3.5" data-end="5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">?Aus Spanien</div>
-            <div class="lyric-persian">از اسپانیا؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 3: Paco -->
-    <div class="lyric-line" data-time="5" data-end="8.5" data-speaker="paco">
-        <div class="speaker-badge paco-badge">
-            <img src="images/avatar-paco.jpg" alt="Paco" onerror="this.src='https://ui-avatars.com/api/?name=Paco&background=f5576c&color=fff&size=48'">
-            <span>Paco</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, ich komme aus Mexiko.</div>
-            <div class="lyric-persian">نه، من از مکزیک می‌آیم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 4: Nicole -->
-    <div class="lyric-line" data-time="8.5" data-end="11.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Aus Mexiko? Wow.</div>
-            <div class="lyric-persian">از مکزیک؟ واو.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 5: Nicole -->
-    <div class="lyric-line" data-time="11.5" data-end="13.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Und woher kommst du?</div>
-            <div class="lyric-persian">و تو از کجا می‌آیی؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 6: Nicole -->
-    <div class="lyric-line" data-time="13.5" data-end="15.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, Moment.</div>
-            <div class="lyric-persian">نه، صبر کن.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 7: Nicole -->
-    <div class="lyric-line" data-time="15.5" data-end="18.5" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Du kommst aus Deutschland? Hm.</div>
-            <div class="lyric-persian">تو از آلمان می‌آیی؟ هوم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 8: Nicole -->
-    <div class="lyric-line" data-time="18.5" data-end="21" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Ah, aus der Schweiz?</div>
-            <div class="lyric-persian">آها، از سوئیس؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 9: Yaco -->
-    <div class="lyric-line" data-time="21" data-end="24" data-speaker="yaco">
-        <div class="speaker-badge yaco-badge">
-            <img src="images/avatar-yaco.jpg" alt="Yaco" onerror="this.src='https://ui-avatars.com/api/?name=Yaco&background=43e97b&color=fff&size=48'">
-            <span>Yaco</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Nein, ich komme aus Österreich.</div>
-            <div class="lyric-persian">نه، من از اتریش می‌آیم.</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-    <!-- Line 10: Nicole -->
-    <div class="lyric-line" data-time="24" data-end="27" data-speaker="nicole">
-        <div class="speaker-badge nicole-badge">
-            <img src="images/avatar-nicole.jpg" alt="Nicole" onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=48'">
-            <span>Nicole</span>
-        </div>
-        <div class="lyric-text">
-            <div class="lyric-german">Ah, aus Österreich?</div>
-            <div class="lyric-persian">آها، از اتریش؟</div>
-        </div>
-        <button class="lyric-repeat-btn" onclick="repeatLine(this)" title="تکرار این جمله">
-            🔁
-        </button>
-    </div>
-
-</div>
-        </div>
-
-        <!-- Grammar Notes -->
-        <div class="grammar-note" style="margin-top: 32px;">
-            <span class="icon">💡</span>
-            <div>
-                <strong>نکته گرامری:</strong>
-                <br>• <strong>"Woher kommst du?"</strong> = از کجا می‌آیی؟ (غیررسمی)
-                <br>• <strong>"Aus + کشور"</strong> = از کشور (بدون حرف تعریف برای اکثر کشورها)
-                <br>• <strong>"Aus der Schweiz"</strong> = از سوئیس (با حرف تعریف)
-                <br>• <strong>"Aus Österreich"</strong> = از اتریش (بدون حرف تعریف)
-            </div>
-        </div>
-
-    </div>
-</div>
-    <!-- Dialog 2: Formal Meeting -->
-    <div class="dialog-container">
-        <div class="dialog-banner">
-            <img src="images/dialog2-banner.jpg"
-                 alt="Formal meeting"
-                 onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80'">
-            <div class="dialog-banner-content">
-                <div>
-                    <h3 class="dialog-title">👔 دیالوگ ۲: ملاقات رسمی</h3>
-                    <p class="dialog-subtitle">Formelles Treffen • Lektion 1, 5</p>
-                </div>
-            </div>
-        </div>
-        <div class="dialog-body">
-
-            <!-- Audio Player Section -->
-            <div class="audio-player-section">
-                <div class="audio-player-header">
-                    <h4>🎧 پلیر صوتی کتاب</h4>
-                    <span class="audio-filename">Lektion 1, 5.mp3</span>
-                </div>
-
-                <audio id="dialog-audio-2" preload="metadata">
-                    <source src="audio/lesson1/Lektion 1, 5.mp3" type="audio/mpeg">
-                </audio>
-
-                <div class="custom-audio-player">
-                    <button class="audio-btn play-pause-btn" id="play-pause-2" onclick="togglePlayPause('dialog-audio-2')">
-                        <span class="play-icon">▶️</span>
-                        <span class="pause-icon" style="display: none;">⏸️</span>
-                    </button>
-
-                    <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-2')">
-                        <div class="audio-progress-bar">
-                            <div class="audio-progress-filled" id="progress-2"></div>
-                        </div>
-                        <div class="audio-time">
-                            <span id="current-time-2">0:00</span>
-                            <span id="duration-2">0:00</span>
-                        </div>
-                    </div>
-
-                    <div class="audio-speed-control">
-                        <label>⚡ سرعت:</label>
-                        <select id="speed-2" onchange="changePlaybackSpeed('dialog-audio-2', this.value)">
-                            <option value="0.5">0.5x (خیلی آهسته)</option>
-                            <option value="0.75">0.75x (آهسته)</option>
-                            <option value="1" selected>1x (عادی)</option>
-                            <option value="1.25">1.25x (سریع)</option>
-                            <option value="1.5">1.5x (خیلی سریع)</option>
-                            <option value="2">2x (فوق سریع)</option>
-                        </select>
-                    </div>
-
-                    <div class="audio-extra-controls">
-                        <button class="audio-btn" onclick="skipBackward('dialog-audio-2', 5)">⏪ 5s</button>
-                        <button class="audio-btn" onclick="skipForward('dialog-audio-2', 5)">5s ⏩</button>
-                        <button class="audio-btn" id="loop-btn-2" onclick="toggleLoop('dialog-audio-2')">🔁</button>
-                        <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 5.mp3', 'Lektion-1-5.mp3')">📥</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lyrics Section -->
-            <div class="lyrics-section" id="lyrics-section-2">
-                <div class="lyrics-header">
-                    <h4>📝 متن همگام با صوت</h4>
-                </div>
-
-                <div class="lyrics-container" id="lyrics-2">
-                    <!-- این قسمت را مشابه دیالوگ 1 برای دیالوگ 2 پر کنید -->
-                    <div class="lyric-line" data-time="0" data-end="30" data-speaker="nicole">
-                        <div class="speaker-badge nicole-badge">
-                            <img src="images/avatar-nicole.jpg" alt="Nicole">
-                            <span>Nicole, Paco & Frau Wachter</span>
-                        </div>
-                        <div class="lyric-text">
-                            <div class="lyric-german">
-                                <p>مکالمه رسمی بین سه نفر...</p>
-                            </div>
-                            <div class="lyric-persian">
-                                <p style="color: var(--text-muted); margin-top: 8px;">
-                                    💡 برای این دیالوگ، timestamp های دقیق را بعد از شنیدن فایل صوتی اضافه کنید
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Dialog 3: How are you? -->
-    <div class="dialog-container">
-        <div class="dialog-banner">
-            <img src="images/dialog3-banner.jpg"
-                 alt="Greetings"
-                 onerror="this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&q=80'">
-            <div class="dialog-banner-content">
-                <div>
-                    <h3 class="dialog-title">😊 دیالوگ ۳: احوالپرسی</h3>
-                    <p class="dialog-subtitle">Nach dem Befinden fragen • Lektion 1, 7</p>
-                </div>
-            </div>
-        </div>
-        <div class="dialog-body">
-
-            <!-- Audio Player Section -->
-            <div class="audio-player-section">
-                <div class="audio-player-header">
-                    <h4>🎧 پلیر صوتی کتاب</h4>
-                    <span class="audio-filename">Lektion 1, 7.mp3</span>
-                </div>
-
-                <audio id="dialog-audio-3" preload="metadata">
-                    <source src="audio/lesson1/Lektion 1, 7.mp3" type="audio/mpeg">
-                </audio>
-
-                <div class="custom-audio-player">
-                    <button class="audio-btn play-pause-btn" id="play-pause-3" onclick="togglePlayPause('dialog-audio-3')">
-                        <span class="play-icon">▶️</span>
-                        <span class="pause-icon" style="display: none;">⏸️</span>
-                    </button>
-
-                    <div class="audio-progress-container" onclick="seekAudio(event, 'dialog-audio-3')">
-                        <div class="audio-progress-bar">
-                            <div class="audio-progress-filled" id="progress-3"></div>
-                        </div>
-                        <div class="audio-time">
-                            <span id="current-time-3">0:00</span>
-                            <span id="duration-3">0:00</span>
-                        </div>
-                    </div>
-
-                    <div class="audio-speed-control">
-                        <label>⚡ سرعت:</label>
-                        <select id="speed-3" onchange="changePlaybackSpeed('dialog-audio-3', this.value)">
-                            <option value="0.5">0.5x (خیلی آهسته)</option>
-                            <option value="0.75">0.75x (آهسته)</option>
-                            <option value="1" selected>1x (عادی)</option>
-                            <option value="1.25">1.25x (سریع)</option>
-                            <option value="1.5">1.5x (خیلی سریع)</option>
-                            <option value="2">2x (فوق سریع)</option>
-                        </select>
-                    </div>
-
-                    <div class="audio-extra-controls">
-                        <button class="audio-btn" onclick="skipBackward('dialog-audio-3', 5)">⏪ 5s</button>
-                        <button class="audio-btn" onclick="skipForward('dialog-audio-3', 5)">5s ⏩</button>
-                        <button class="audio-btn" id="loop-btn-3" onclick="toggleLoop('dialog-audio-3')">🔁</button>
-                        <button class="audio-btn" onclick="downloadAudio('audio/lesson1/Lektion 1, 7.mp3', 'Lektion-1-7.mp3')">📥</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Simple Dialog Display (No Lyrics Sync) -->
-            <div style="margin-top: 32px;">
-                <h4 style="color: var(--accent-cyan); margin-bottom: 20px;">📝 متن مکالمه:</h4>
-
-                <div class="dialog-line">
-                    <div class="dialog-bubble" onclick="speakGerman('Wie geht es dir?')">
-                        <div class="dialog-de">🔊 Wie geht's?</div>
-                        <div class="dialog-pron">وی گِهتس؟</div>
-                        <div class="dialog-fa">چطوری؟</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line right">
-                    <div class="dialog-bubble" onclick="speakGerman('Gut, danke!')">
-                        <div class="dialog-de">🔊 Gut, danke!</div>
-                        <div class="dialog-pron">گوت، دانکِ!</div>
-                        <div class="dialog-fa">خوبم، ممنون!</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line">
-                    <div class="dialog-bubble" onclick="speakGerman('Wie geht es Ihnen?')">
-                        <div class="dialog-de">🔊 Wie geht es Ihnen?</div>
-                        <div class="dialog-pron">وی گِهت اِس اینِن؟</div>
-                        <div class="dialog-fa">شما چطورید؟ (رسمی)</div>
-                    </div>
-                </div>
-
-                <div class="dialog-line right">
-                    <div class="dialog-bubble" onclick="speakGerman('Sehr gut, danke!')">
-                        <div class="dialog-de">🔊 Sehr gut, danke!</div>
-                        <div class="dialog-pron">زِر گوت، دانکِ!</div>
-                        <div class="dialog-fa">خیلی خوبم، ممنون!</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-    <!-- TAB: ALPHABET -->
-    <div id="tab-alphabet" class="tab-content">
-
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/alphabet-banner.jpg"
-                     alt="Alphabet"
-                     onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">🔤 الفبای آلمانی</h2>
-                        <p class="section-banner-subtitle">Das deutsche Alphabet • 26 حرف + 4 حرف خاص</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <p style="color: var(--text-secondary); margin-bottom: 24px; text-align: center;">
-                    👆 روی هر حرف کلیک کنید تا صدای صحیح آن را بشنوید
-                </p>
-                <div class="alphabet-grid" id="alphabet-grid"></div>
-            </div>
-        </section>
-
-        <!-- Special Characters -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/special-chars-banner.jpg"
-                     alt="Special characters"
-                     onerror="this.src='https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">✨ حروف خاص آلمانی</h2>
-                        <p class="section-banner-subtitle">Umlaute und Eszett</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="grammar-box gold">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🔠</div>
-                        <div>
-                            <h3 class="grammar-title">حروف ویژه که فقط در آلمانی وجود دارند</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>حرف</th>
-                                    <th>نام</th>
-                                    <th>تلفظ IPA</th>
-                                    <th>تلفظ فارسی</th>
-                                    <th>مثال</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ä')" style="cursor: pointer;">
-                                    <td style="font-size: 1.8rem; color: var(--accent-cyan);"><strong>Ä ä</strong></td>
-                                    <td>A-Umlaut</td>
-                                    <td>/ɛː/</td>
-                                    <td>اِه (مثل E)</td>
-                                    <td onclick="speakGerman('Mädchen')">Mädchen (دختر)</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ö')" style="cursor: pointer;">
-                                    <td style="font-size: 1.8rem; color: var(--accent-cyan);"><strong>Ö ö</strong></td>
-                                    <td>O-Umlaut</td>
-                                    <td>/øː/</td><td>اُو (لب‌های گرد)</td>
-                                    <td onclick="speakGerman('schön')">schön (زیبا)</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ü')" style="cursor: pointer;">
-                                    <td style="font-size: 1.8rem; color: var(--accent-cyan);"><strong>Ü ü</strong></td>
-                                    <td>U-Umlaut</td>
-                                    <td>/yː/</td>
-                                    <td>او (لب‌های گرد)</td>
-                                    <td onclick="speakGerman('Tschüs')">Tschüs (خداحافظ)</td>
-                                </tr>
-                                <tr onclick="speakGerman('ß')" style="cursor: pointer;">
-                                    <td style="font-size: 1.8rem; color: var(--accent-cyan);"><strong>ß</strong></td>
-                                    <td>Eszett</td>
-                                    <td>/s/</td>
-                                    <td>س</td>
-                                    <td onclick="speakGerman('heißen')">heißen (نامیده شدن)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="grammar-note">
-                            <span class="icon">💡</span>
-                            <div>
-                                <strong>نکته:</strong> حرف <strong>ß</strong> فقط بعد از مصوت‌های بلند می‌آید و هیچ‌وقت در اول کلمه نمی‌آید.
-                                <br>در سوئیس، به جای ß از ss استفاده می‌شود: heißen → heissen
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- TAB: COUNTRIES -->
-    <div id="tab-countries" class="tab-content">
-
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/countries-banner.jpg"
-                     alt="Countries"
-                     onerror="this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">🌍 کشورها</h2>
-                        <p class="section-banner-subtitle">Länder • 8 کشور مهم</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <p style="color: var(--text-secondary); margin-bottom: 24px; text-align: center;">
-                    👆 روی هر کشور کلیک کنید تا جمله "من از ... می‌آیم" را بشنوید
-                </p>
-                <div class="countries-grid" id="countries-grid"></div>
-            </div>
-        </section>
-
-        <!-- Grammar: Countries with/without articles -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/grammar-countries-banner.jpg"
-                     alt="Countries Grammar"
-                     onerror="this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">📐 گرامر: کشورها با/بدون حرف تعریف</h2>
-                        <p class="section-banner-subtitle">Länder mit/ohne Artikel</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-                <div class="grammar-box green">
-                    <div class="grammar-header">
-                        <div class="grammar-icon">🌍</div>
-                        <div>
-                            <h3 class="grammar-title">چه زمانی از حرف تعریف استفاده می‌کنیم؟</h3>
-                        </div>
-                    </div>
-                    <div class="grammar-body">
-                        <h4 style="color: var(--accent-green); margin-bottom: 15px;">✅ بدون حرف تعریف (اکثر کشورها):</h4>
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>کشور</th>
-                                    <th>جمله صحیح</th>
-                                    <th>ترجمه</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich komme aus Deutschland')">
-                                    <td>Deutschland 🇩🇪</td>
-                                    <td>Ich komme <span class="highlight">aus Deutschland</span>.</td>
-                                    <td>من از آلمان می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus Spanien')">
-                                    <td>Spanien 🇪🇸</td>
-                                    <td>Ich komme <span class="highlight">aus Spanien</span>.</td>
-                                    <td>من از اسپانیا می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus Mexiko')">
-                                    <td>Mexiko 🇲🇽</td>
-                                    <td>Ich komme <span class="highlight">aus Mexiko</span>.</td>
-                                    <td>من از مکزیک می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus Frankreich')">
-                                    <td>Frankreich 🇫🇷</td>
-                                    <td>Ich komme <span class="highlight">aus Frankreich</span>.</td>
-                                    <td>من از فرانسه می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus Österreich')">
-                                    <td>Österreich 🇦🇹</td>
-                                    <td>Ich komme <span class="highlight">aus Österreich</span>.</td>
-                                    <td>من از اتریش می‌آیم.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4 style="color: var(--accent-orange); margin: 30px 0 15px;">⚠️ با حرف تعریف (استثناها):</h4>
-                        <table class="grammar-table">
-                            <thead>
-                                <tr>
-                                    <th>کشور</th>
-                                    <th>جنسیت</th>
-                                    <th>جمله صحیح</th>
-                                    <th>ترجمه</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onclick="speakGerman('Ich komme aus der Schweiz')">
-                                    <td><strong>die</strong> Schweiz 🇨🇭</td>
-                                    <td style="color: var(--accent-pink);">مؤنث</td>
-                                    <td>Ich komme aus <span class="highlight">der Schweiz</span>.</td>
-                                    <td>من از سوئیس می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus der Türkei')">
-                                    <td><strong>die</strong> Türkei 🇹🇷</td>
-                                    <td style="color: var(--accent-pink);">مؤنث</td>
-                                    <td>Ich komme aus <span class="highlight">der Türkei</span>.</td>
-                                    <td>من از ترکیه می‌آیم.</td>
-                                </tr>
-                                <tr onclick="speakGerman('Ich komme aus dem Iran')">
-                                    <td><strong>dem</strong> Iran 🇮🇷</td>
-                                    <td style="color: var(--accent-blue);">مذکر</td>
-                                    <td>Ich komme aus <span class="highlight">dem Iran</span>.</td>
-                                    <td>من از ایران می‌آیم.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="grammar-note">
-                            <span class="icon">🔑</span>
-                            <div>
-                                <strong>قانون:</strong>
-                                <br>• اگر کشور حرف تعریف دارد → <span style="color: var(--accent-orange);">aus + حرف تعریف در حالت Dativ</span>
-                                <br>• die → der (مؤنث) | der → dem (مذکر)
-                                <br>• مثال: die Schweiz → aus <strong>der</strong> Schweiz | dem Iran → aus <strong>dem</strong> Iran
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- TAB: FLASHCARD -->
-    <div id="tab-flashcard" class="tab-content">
-
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/flashcard-banner.jpg"
-                     alt="Flashcards"
-                     onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">🃏 فلش‌کارت‌ها</h2>
-                        <p class="section-banner-subtitle">تمرین و حفظ واژگان</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <div class="fc-wrapper">
-                    <!-- Progress -->
-                    <div class="fc-progress">
-                        <div class="fc-counter">
-                            <span id="fc-current">1</span> / <span id="fc-total">40</span>
-                        </div>
-                        <div class="fc-progress-bar">
-                            <div class="fc-progress-fill" id="fc-progress-fill"></div>
-                        </div>
-                    </div>
-
-                    <!-- Filters -->
-                    <div class="fc-filters">
-                        <button class="fc-filter-btn active" onclick="setFcFilter('all', this)">همه</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('greeting', this)">سلام</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('farewell', this)">خداحافظی</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('pronoun', this)">ضمایر</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('question', this)">سؤالات</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('answer', this)">جواب‌ها</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('phrase', this)">عبارات</button>
-                        <button class="fc-filter-btn" onclick="setFcFilter('country', this)">کشورها</button>
-                    </div>
-
-                    <!-- Card Container -->
-                    <div class="fc-container" onclick="flipCard()">
-                        <div class="fc-card" id="fc-card">
-                            <!-- Front -->
-                            <div class="fc-face fc-front">
-                                <div class="fc-front-image" id="fc-front-image"></div>
-                                <div class="fc-front-content">
-                                    <div class="fc-emoji" id="fc-emoji">👋</div>
-                                    <div class="fc-german" id="fc-german">Hallo</div>
-                                    <div class="fc-ipa" id="fc-ipa">/haˈloː/</div>
-                                    <div class="fc-pron" id="fc-pron">🔊 هالو</div>
-                                    <div class="fc-hint">👆 کلیک کنید برای دیدن معنی</div>
-                                </div>
-                            </div>
-                            <!-- Back -->
-                            <div class="fc-face fc-back">
-                                <div class="fc-meaning" id="fc-meaning">سلام (غیررسمی)</div>
-                                <div class="fc-example">
-                                    <div id="fc-example">Hallo! Wie geht es dir?</div>
-                                    <div class="fc-example-fa" id="fc-example-fa">سلام! چطوری؟</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <div class="fc-controls">
-                        <button class="btn btn-secondary btn-icon" onclick="prevCard()" title="قبلی">⬅️</button>
-                        <button class="btn btn-primary btn-icon" onclick="speakCurrentCard()" title="شنیدن">🔊</button>
-                        <button class="btn btn-secondary btn-icon" onclick="nextCard()" title="بعدی">➡️</button>
-                    </div>
-
-                    <!-- Extra Controls -->
-                    <div style="display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
-                        <button class="btn btn-secondary" onclick="shuffleCards()">
-                            <span>🔀</span>
-                            <span>تصادفی کردن</span>
-                        </button>
-                        <button class="btn btn-secondary" onclick="resetCards()">
-                            <span>🔄</span>
-                            <span>شروع از اول</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- TAB: EXERCISES -->
-    <div id="tab-exercises" class="tab-content">
-
-        <!-- Exercise 1: Dialog Matching -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/exercise1-banner.jpg"
-                     alt="Listening Exercise"
-                     onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">🎧 تمرین ۱: چه کسی چه می‌گوید؟</h2>
-                        <p class="section-banner-subtitle">Wer sagt was?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <!-- Audio Player -->
-                <div class="exercise-audio-player">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 16px;">🔊 گوش دادن به مکالمه</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                        ابتدا به مکالمه گوش دهید و سپس مشخص کنید هر جمله را چه کسی گفته است.
-                    </p>
-                    <audio controls style="width: 100%; max-width: 600px; margin-bottom: 24px;">
-                        <source src="audio/lesson1/dialog1.mp3" type="audio/mpeg">
-                        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-                    </audio>
-                    <button class="btn btn-primary" onclick="playExerciseAudio('dialog1')">
-                        <span>▶️</span>
-                        <span>پخش مکالمه</span>
-                    </button>
-                </div>
-
-                <!-- Matching Exercise -->
-                <div class="matching-exercise" style="margin-top: 40px;">
-                    <h3 style="color: var(--accent-purple); margin-bottom: 20px;">📝 هر جمله را به گوینده‌اش وصل کنید:</h3>
-
-                    <div class="matching-container">
-                        <!-- Speakers Column -->
-                        <div class="matching-speakers">
-                            <div class="speaker-card" data-speaker="nicole" onclick="selectSpeaker('nicole')">
-                                <img src="images/avatar-nicole.jpg"
-                                     alt="Nicole"
-                                     onerror="this.src='https://ui-avatars.com/api/?name=Nicole&background=667eea&color=fff&size=128'">
-                                <div class="speaker-name">Nicole</div>
-                            </div>
-                            <div class="speaker-card" data-speaker="paco" onclick="selectSpeaker('paco')">
-                                <img src="images/avatar-paco.jpg"
-                                     alt="Paco"
-                                     onerror="this.src='https://ui-avatars.com/api/?name=Paco&background=f5576c&color=fff&size=128'">
-                                <div class="speaker-name">Paco</div>
-                            </div>
-                            <div class="speaker-card" data-speaker="yaco" onclick="selectSpeaker('yaco')">
-                                <img src="images/avatar-yaco.jpg"
-                                     alt="Yaco"
-                                     onerror="this.src='https://ui-avatars.com/api/?name=Yaco&background=43e97b&color=fff&size=128'">
-                                <div class="speaker-name">Yaco</div>
-                            </div>
-                        </div>
-
-                        <!-- Sentences Column -->
-                        <div class="matching-sentences">
-                            <div class="sentence-card" data-sentence="1" data-correct="nicole" onclick="selectSentence(this)">
-                                <div class="sentence-number">1️⃣</div>
-                                <div class="sentence-text">
-                                    <div class="sentence-de">Woher kommst du? Aus Spanien?</div>
-                                    <div class="sentence-fa">از کجا می‌آیی؟ از اسپانیا؟</div>
-                                </div>
-                                <div class="sentence-speaker" id="speaker-1">❓</div>
-                            </div>
-
-                            <div class="sentence-card" data-sentence="2" data-correct="paco" onclick="selectSentence(this)">
-                                <div class="sentence-number">2️⃣</div>
-                                <div class="sentence-text">
-                                    <div class="sentence-de">Nein, ich komme aus Mexiko.</div>
-                                    <div class="sentence-fa">نه، من از مکزیک می‌آیم.</div>
-                                </div>
-                                <div class="sentence-speaker" id="speaker-2">❓</div>
-                            </div>
-
-                            <div class="sentence-card" data-sentence="3" data-correct="nicole" onclick="selectSentence(this)">
-                                <div class="sentence-number">3️⃣</div>
-                                <div class="sentence-text">
-                                    <div class="sentence-de">Du kommst aus Deutschland, hm?</div>
-                                    <div class="sentence-fa">تو از آلمان می‌آیی، هان؟</div>
-                                </div>
-                                <div class="sentence-speaker" id="speaker-3">❓</div>
-                            </div>
-
-                            <div class="sentence-card" data-sentence="4" data-correct="yaco" onclick="selectSentence(this)">
-                                <div class="sentence-number">4️⃣</div>
-                                <div class="sentence-text">
-                                    <div class="sentence-de">Nein, aus der Schweiz.</div>
-                                    <div class="sentence-fa">نه، از سوئیس.</div>
-                                </div>
-                                <div class="sentence-speaker" id="speaker-4">❓</div>
-                            </div>
-
-                            <div class="sentence-card" data-sentence="5" data-correct="yaco" onclick="selectSentence(this)">
-                                <div class="sentence-number">5️⃣</div>
-                                <div class="sentence-text">
-                                    <div class="sentence-de">Ich komme aus Österreich.</div>
-                                    <div class="sentence-fa">من از اتریش می‌آیم.</div>
-                                </div>
-                                <div class="sentence-speaker" id="speaker-5">❓</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 32px;">
-                        <button class="btn btn-success" onclick="checkMatchingAnswers()">
-                            <span>✅</span>
-                            <span>بررسی جواب‌ها</span>
-                        </button>
-                        <button class="btn btn-secondary" onclick="resetMatching()">
-                            <span>🔄</span>
-                            <span>شروع مجدد</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Exercise 2: Formal/Informal Matching -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/exercise2-banner.jpg"
-                     alt="Formal Informal"
-                     onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">👔 تمرین ۲: رسمی یا غیررسمی؟</h2>
-                        <p class="section-banner-subtitle">Formell oder Informell?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <!-- Audio Player -->
-                <div class="exercise-audio-player">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 16px;">🔊 گوش دادن به مکالمه</h3>
-                    <audio controls style="width: 100%; max-width: 600px; margin-bottom: 24px;">
-                        <source src="audio/lesson1/dialog2.mp3" type="audio/mpeg">
-                    </audio>
-                    <button class="btn btn-primary" onclick="playExerciseAudio('dialog2')">
-                        <span>▶️</span>
-                        <span>پخش مکالمه</span>
-                    </button>
-                </div>
-
-                <!-- Checkbox Exercise -->
-                <div class="checkbox-exercise" style="margin-top: 40px;">
-                    <h3 style="color: var(--accent-purple); margin-bottom: 20px;">☑️ چه کسی این جملات را گفته است؟</h3>
-
-                    <div class="checkbox-grid">
-                        <div class="checkbox-item">
-                            <div class="checkbox-sentence">
-                                <strong>Das ist Paco.</strong>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">این پاکو است.</p>
-                            </div>
-                            <div class="checkbox-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q1" value="nicole" onchange="handleCheckbox(this)">
-                                    <span>Nicole</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q1" value="paco">
-                                    <span>Paco</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q1" value="wachter">
-                                    <span>Frau Wachter</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <div class="checkbox-sentence">
-                                <strong>Guten Tag, Frau Wachter!</strong>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">روز بخیر، خانم واختر!</p>
-                            </div>
-                            <div class="checkbox-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q2" value="nicole">
-                                    <span>Nicole</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q2" value="paco" onchange="handleCheckbox(this)">
-                                    <span>Paco</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q2" value="wachter">
-                                    <span>Frau Wachter</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <div class="checkbox-sentence">
-                                <strong>Woher kommen Sie?</strong>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">از کجا می‌آیید؟</p>
-                            </div>
-                            <div class="checkbox-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q3" value="nicole">
-                                    <span>Nicole</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q3" value="paco">
-                                    <span>Paco</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q3" value="wachter" onchange="handleCheckbox(this)">
-                                    <span>Frau Wachter</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <div class="checkbox-sentence">
-                                <strong>Ich komme aus Mexiko.</strong>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">من از مکزیک می‌آیم.</p>
-                            </div>
-                            <div class="checkbox-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q4" value="nicole">
-                                    <span>Nicole</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q4" value="paco" onchange="handleCheckbox(this)">
-                                    <span>Paco</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q4" value="wachter">
-                                    <span>Frau Wachter</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="checkbox-item">
-                            <div class="checkbox-sentence">
-                                <strong>Auf Wiedersehen, Herr Rodriguez!</strong>
-                                <p style="color: var(--text-muted); font-size: 0.9rem;">خداحافظ، آقای رودریگز!</p>
-                            </div>
-                            <div class="checkbox-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q5" value="nicole">
-                                    <span>Nicole</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q5" value="paco">
-                                    <span>Paco</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="q5" value="wachter" onchange="handleCheckbox(this)">
-                                    <span>Frau Wachter</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 32px;">
-                        <button class="btn btn-success" onclick="checkCheckboxAnswers()">
-                            <span>✅</span>
-                            <span>بررسی جواب‌ها</span>
-                        </button>
-                        <button class="btn btn-secondary" onclick="resetCheckboxes()">
-                            <span>🔄</span>
-                            <span>شروع مجدد</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Exercise 3: Connect Questions & Answers -->
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/exercise3-banner.jpg"
-                     alt="Questions Answers"
-                     onerror="this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">🔗 تمرین ۳: وصل کردن سؤال و جواب</h2>
-                        <p class="section-banner-subtitle">Fragen und Antworten verbinden</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <div class="connect-exercise">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 20px;">🎯 هر سؤال را به جواب مناسبش وصل کنید:</h3>
-
-                    <div class="connect-container">
-                        <!-- Questions -->
-                        <div class="connect-questions">
-                            <div class="connect-card question-card" data-id="q1" onclick="selectConnectCard(this, 'question')">
-                                <div class="connect-number">1</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Wie geht's?</div>
-                                    <div class="connect-fa">چطوری؟</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card question-card" data-id="q2" onclick="selectConnectCard(this, 'question')">
-                                <div class="connect-number">2</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Wie geht es Ihnen?</div>
-                                    <div class="connect-fa">شما چطورید؟</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card question-card" data-id="q3" onclick="selectConnectCard(this, 'question')">
-                                <div class="connect-number">3</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Wie geht es dir?</div>
-                                    <div class="connect-fa">تو چطوری؟</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Answers -->
-                        <div class="connect-answers">
-                            <div class="connect-card answer-card" data-id="a1" data-match="q2" onclick="selectConnectCard(this, 'answer')">
-                                <div class="connect-letter">A</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Sehr gut, danke!</div>
-                                    <div class="connect-fa">خیلی خوبم، ممنون!</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card answer-card" data-id="a2" data-match="q1" onclick="selectConnectCard(this, 'answer')">
-                                <div class="connect-letter">B</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Gut, danke!</div>
-                                    <div class="connect-fa">خوبم، ممنون!</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card answer-card" data-id="a3" data-match="q3" onclick="selectConnectCard(this, 'answer')">
-                                <div class="connect-letter">C</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Es geht.</div>
-                                    <div class="connect-fa">بد نیستم.</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card answer-card" data-id="a4" data-match="none" onclick="selectConnectCard(this, 'answer')">
-                                <div class="connect-letter">D</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Auch gut.</div>
-                                    <div class="connect-fa">منم خوبم.</div>
-                                </div>
-                            </div>
-
-                            <div class="connect-card answer-card" data-id="a5" data-match="none" onclick="selectConnectCard(this, 'answer')">
-                                <div class="connect-letter">E</div>
-                                <div class="connect-text">
-                                    <div class="connect-de">Nicht so gut.</div>
-                                    <div class="connect-fa">زیاد خوب نیستم.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 32px;">
-                        <button class="btn btn-success" onclick="checkConnections()">
-                            <span>✅</span>
-                            <span>بررسی اتصالات</span>
-                        </button>
-                        <button class="btn btn-secondary" onclick="resetConnections()">
-                            <span>🔄</span>
-                            <span>شروع مجدد</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-
-    <!-- TAB: QUIZ -->
-    <div id="tab-quiz" class="tab-content">
-
-        <section class="section">
-            <div class="section-banner">
-                <img src="images/quiz-banner.jpg"
-                     alt="Quiz"
-                     onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80'">
-                <div class="section-banner-content">
-                    <div>
-                        <h2 class="section-banner-title">📝 آزمون درس ۱</h2>
-                        <p class="section-banner-subtitle">5 نوع آزمون مختلف</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-body">
-
-                <!-- Quiz Types -->
-                <div class="quiz-types">
-                    <button class="quiz-type-btn active" onclick="setQuizType('meaning', this)">
-                        <span class="icon">📖</span>
-                        <span class="label">معنی</span>
-                    </button>
-                    <button class="quiz-type-btn" onclick="setQuizType('listening', this)">
-                        <span class="icon">🎧</span>
-                        <span class="label">شنیداری</span>
-                    </button>
-                    <button class="quiz-type-btn" onclick="setQuizType('reverse', this)">
-                        <span class="icon">🔄</span>
-                        <span class="label">معکوس</span>
-                    </button>
-                    <button class="quiz-type-btn" onclick="setQuizType('verb', this)">
-                        <span class="icon">⚙️</span>
-                        <span class="label">صرف فعل</span>
-                    </button>
-                    <button class="quiz-type-btn" onclick="setQuizType('duSie', this)">
-                        <span class="icon">👔</span>
-                        <span class="label">du/Sie</span>
-                    </button>
-                </div>
-
-                <!-- Quiz Box -->
-                <div class="quiz-box">
-                    <div class="quiz-image" id="quiz-image-container" style="display: none;">
-                        <img id="quiz-image" src="" alt="Quiz image">
-                    </div>
-                    <div class="quiz-body">
-                        <h3 class="quiz-question" id="quiz-question">Hallo</h3>
-                        <p class="quiz-instruction" id="quiz-instruction">معنی این کلمه چیست؟</p>
-
-                        <button class="quiz-listen-btn" id="quiz-listen-btn" onclick="speakQuizQuestion()" style="display: none;">
-                            <span>🎧</span>
-                            <span>گوش دادن</span>
-                        </button>
-
-                        <div class="quiz-options" id="quiz-options">
-                            <!-- گزینه‌ها با JS اضافه می‌شوند -->
-                        </div>
-
-                        <div class="quiz-score">
-                            <div class="score-item">
-                                <div class="score-value green" id="score-correct">0</div>
-                                <div class="score-label">✅ درست</div>
-                            </div>
-                            <div class="score-item">
-                                <div class="score-value red" id="score-wrong">0</div>
-                                <div class="score-label">❌ غلط</div>
-                            </div>
-                            <div class="score-item">
-                                <div class="score-value gold" id="score-percent">0%</div>
-                                <div class="score-label">📊 درصد</div>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-success" onclick="resetQuiz()" style="margin-top: 24px; width: 100%;">
-                            <span>🔄</span>
-                            <span>شروع مجدد آزمون</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-
-</main>
-
-<!-- ============================================
-     FOOTER
-     ============================================ -->
-<footer class="footer">
-    <div class="footer-logo">🎓 Menschen A1.1</div>
-    <p style="color: var(--text-secondary); margin-bottom: 8px;">درس ۱: Hallo! Ich bin...</p>
-    <p style="color: var(--text-muted); font-size: 0.9rem;">ساخته شده با ❤️ برای یادگیری زبان آلمانی</p>
-    <p style="color: var(--accent-cyan); font-weight: 600; margin-top: 12px;">آتیکو مارکت</p>
-</footer>
-
-<!-- ============================================
-     TOAST NOTIFICATION
-     ============================================ -->
-<div class="toast" id="toast">پیام</div>
-
-<!-- ============================================
-     JAVASCRIPT
-    <!-- ابتدا داده‌های درس ۱ لود میشن -->
-    <script src="js/data/lesson1-data.js"></script>
-
-    <!-- بعد کدهای اصلی -->
-    <script src="js/main.js"></script>
-</body>
-</html>
