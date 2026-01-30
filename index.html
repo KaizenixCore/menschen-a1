@@ -13,7 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- ⭐ این خط اضافه شد - فراخوانی CSS اصلی -->
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
 
@@ -31,10 +34,10 @@
                 </div>
             </a>
             <div class="header-actions">
-                <button class="header-btn theme-btn" onclick="toggleTheme()" title="تغییر تم">
-                    <span class="theme-icon" id="themeIcon">🌙</span>
+                <button class="theme-toggle" onclick="toggleTheme()" title="تغییر تم">
+                    <span id="themeIcon">🌙</span>
                 </button>
-                <button class="header-btn" onclick="showAbout()" title="درباره ما">ℹ️</button>
+                <button class="menu-btn" onclick="showAbout()" title="درباره ما">ℹ️</button>
             </div>
         </div>
     </div>
@@ -56,25 +59,21 @@
         </div>
         <h1 class="hero-title">Menschen A1.1</h1>
         <p class="hero-subtitle">یادگیری زبان آلمانی از صفر تا پیشرفته</p>
-        <p class="hero-description">
-            با روش‌های مدرن، تلفظ صحیح، تصاویر واقعی و تمرین‌های تعاملی،
-            زبان آلمانی را به صورت حرفه‌ای یاد بگیرید.
-        </p>
 
         <div class="hero-stats">
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-value">12</div>
                 <div class="stat-label">درس</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-value">500+</div>
                 <div class="stat-label">واژه</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-value">100+</div>
                 <div class="stat-label">دیالوگ</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-value">∞</div>
                 <div class="stat-label">تمرین</div>
             </div>
@@ -99,11 +98,7 @@
 <section class="lessons-section">
     <div class="container">
         <div class="section-header">
-            <div class="section-badge">
-                <span>📚</span>
-                <span>Modul 1-4</span>
-            </div>
-            <h2 class="section-title">درس‌های کتاب</h2>
+            <h2 class="section-title">📚 درس‌های کتاب</h2>
             <p class="section-subtitle">۱۲ درس کامل با گرامر، واژگان، مکالمه، تمرین و آزمون</p>
         </div>
 
@@ -119,11 +114,7 @@
 <section class="features-section">
     <div class="container">
         <div class="section-header">
-            <div class="section-badge">
-                <span>✨</span>
-                <span>ویژگی‌ها</span>
-            </div>
-            <h2 class="section-title">چرا این اپلیکیشن؟</h2>
+            <h2 class="section-title">✨ چرا این اپلیکیشن؟</h2>
             <p class="section-subtitle">امکانات حرفه‌ای برای یادگیری بهتر</p>
         </div>
 
@@ -168,13 +159,21 @@
 <footer class="footer">
     <div class="footer-logo">🎓 Menschen A1.1</div>
     <p class="footer-text">ساخته شده با ❤️ برای یادگیری زبان آلمانی</p>
-    <p class="footer-brand">آتیکو مارکت</p>
+    <p class="footer-text">آتیکو مارکت</p>
 </footer>
 
 <!-- ============================================
      TOAST NOTIFICATION
      ============================================ -->
 <div class="toast" id="toast">پیام</div>
+
+<!-- ============================================
+     OFFLINE INDICATOR - در پایین صفحه
+     ============================================ -->
+<div class="offline-indicator" id="offline-indicator">
+    <span>📴</span>
+    <span>حالت آفلاین</span>
+</div>
 
 <!-- ============================================
      INSTALL PROMPT
@@ -189,8 +188,8 @@
             </div>
         </div>
         <div class="install-prompt-actions">
-            <button class="install-btn secondary" onclick="dismissInstall()">بعداً</button>
-            <button class="install-btn primary" onclick="installApp()">نصب</button>
+            <button class="btn btn-secondary" onclick="dismissInstall()">بعداً</button>
+            <button class="btn btn-primary" onclick="installApp()">نصب</button>
         </div>
     </div>
 </div>
@@ -198,14 +197,14 @@
 <!-- ============================================
      SCROLL TO TOP
      ============================================ -->
-<button class="scroll-top" id="scrollTop" onclick="scrollToTop()">⬆️</button>
+<button class="scroll-top btn btn-icon btn-primary" id="scrollTop" onclick="scrollToTop()">⬆️</button>
 
 <!-- ============================================
      JAVASCRIPT
      ============================================ -->
 <script>
 // ============================================
-// LESSONS DATA - اطلاعات ۱۲ درس (اصلاح شده)
+// LESSONS DATA - اطلاعات ۱۲ درس
 // ============================================
 const lessonsData = [
     {
@@ -416,28 +415,17 @@ function renderLessons() {
                 <div class="lesson-meta">
                     <div class="lesson-meta-item">
                         <span>📖</span>
-                        <span>${lesson.words}</span>
+                        <span>${lesson.words} واژه</span>
                     </div>
                     <div class="lesson-meta-item">
                         <span>💬</span>
-                        <span>${lesson.dialogs}</span>
+                        <span>${lesson.dialogs} دیالوگ</span>
                     </div>
                     <div class="lesson-meta-item">
                         <span>📐</span>
-                        <span>${lesson.grammar}</span>
+                        <span>${lesson.grammar} گرامر</span>
                     </div>
                 </div>
-                ${lesson.status === 'progress' ? `
-                <div class="lesson-progress">
-                    <div class="lesson-progress-bar">
-                        <div class="lesson-progress-fill" style="width: ${lesson.progress}%"></div>
-                    </div>
-                    <div class="lesson-progress-text">
-                        <span>پیشرفت</span>
-                        <span>${lesson.progress}%</span>
-                    </div>
-                </div>
-                ` : ''}
             </div>
         </a>
     `).join('');
@@ -459,22 +447,21 @@ function showLockedMessage(event) {
 }
 
 // ============================================
-// THEME TOGGLE - کاملاً کار می‌کند!
+// THEME TOGGLE - اصلاح شده و کامل
 // ============================================
 function toggleTheme() {
-    const html = document.documentElement;
+    const body = document.body;
     const themeIcon = document.getElementById('themeIcon');
-    const currentTheme = html.getAttribute('data-theme');
     
-    if (currentTheme === 'light') {
-        html.removeAttribute('data-theme');
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
         localStorage.setItem('theme', 'dark');
-        themeIcon.textContent = '🌙';
+        if (themeIcon) themeIcon.textContent = '🌙';
         showToast('🌙 تم تاریک فعال شد', 'info');
     } else {
-        html.setAttribute('data-theme', 'light');
+        body.classList.add('light-theme');
         localStorage.setItem('theme', 'light');
-        themeIcon.textContent = '☀️';
+        if (themeIcon) themeIcon.textContent = '☀️';
         showToast('☀️ تم روشن فعال شد', 'info');
     }
 }
@@ -484,7 +471,7 @@ function loadSavedTheme() {
     const themeIcon = document.getElementById('themeIcon');
     
     if (savedTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.classList.add('light-theme');
         if (themeIcon) themeIcon.textContent = '☀️';
     }
 }
@@ -503,6 +490,23 @@ function showToast(message, type = 'success') {
         toast.classList.remove('show');
     }, 3000);
 }
+
+// ============================================
+// OFFLINE DETECTION - اصلاح شده
+// ============================================
+function updateOnlineStatus() {
+    const indicator = document.getElementById('offline-indicator');
+    if (!indicator) return;
+    
+    if (!navigator.onLine) {
+        indicator.classList.add('show');
+    } else {
+        indicator.classList.remove('show');
+    }
+}
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
 
 // ============================================
 // PWA INSTALL PROMPT
@@ -580,6 +584,7 @@ if ('serviceWorker' in navigator) {
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedTheme();
     renderLessons();
+    updateOnlineStatus();
 
     setTimeout(() => {
         showToast('🎓 به Menschen A1.1 خوش آمدید!', 'success');
