@@ -2320,4 +2320,381 @@
             .sidebar { width: 100%; right: -100%; }
             .sidebar.open { right: 0; }
         }
+            /* ============================================
+       CSS VARIABLES (متغیرهای رنگی و اندازه‌ها)
+       ============================================ */
+    :root {
+        --bg-primary: #030014;
+        --bg-secondary: #0a0a1a;
+        --bg-card: #0f0f23;
+        --bg-elevated: #151530;
+        --bg-hover: #1a1a40;
+
+        --border-subtle: rgba(255,255,255,0.06);
+        --border-medium: rgba(255,255,255,0.1);
+        --border-strong: rgba(255,255,255,0.15);
+
+        --text-primary: #ffffff;
+        --text-secondary: #b4b4c7;
+        --text-muted: #6b6b80;
+
+        --accent-red: #ff2d55;
+        --accent-orange: #ff9500;
+        --accent-yellow: #ffcc00;
+        --accent-green: #30d158;
+        --accent-cyan: #64d2ff;
+        --accent-blue: #0a84ff;
+        --accent-purple: #bf5af2;
+        --accent-pink: #ff375f;
+
+        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-dark: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+        --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+        --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-full: 9999px;
+
+        --transition-fast: 0.15s ease;
+        --transition-normal: 0.3s ease;
+    }
+
+    /* ============================================
+       RESET & BASE (تنظیمات پایه‌ای)
+       ============================================ */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        line-height: 1.7;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================
+       AUDIO PLAYER STYLES (استایل پلیر صوتی)
+       ============================================ */
+    .audio-player-section {
+        background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(100, 210, 255, 0.05) 100%);
+        border: 2px solid var(--border-medium);
+        border-radius: var(--radius-xl);
+        padding: 24px;
+        margin-bottom: 32px;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .audio-player-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--border-medium);
+    }
+
+    .audio-player-header h4 {
+        color: var(--accent-cyan);
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .audio-filename {
+        background: var(--accent-cyan);
+        color: white;
+        padding: 6px 16px;
+        border-radius: var(--radius-full);
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .custom-audio-player {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .audio-btn {
+        background: var(--bg-elevated);
+        border: 2px solid var(--border-medium);
+        color: var(--text-primary);
+        padding: 10px 16px;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .audio-btn:hover {
+        background: var(--accent-cyan);
+        color: white;
+        border-color: var(--accent-cyan);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(100, 210, 255, 0.3);
+    }
+
+    .play-pause-btn {
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+        color: white;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(100, 210, 255, 0.4);
+        transition: var(--transition-normal);
+    }
+
+    .play-pause-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .audio-progress-bar {
+        width: 100%;
+        height: 8px;
+        background: var(--border-medium);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        margin-bottom: 8px;
+        cursor: pointer;
+    }
+
+    .audio-progress-filled {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+        border-radius: var(--radius-full);
+        transition: width 0.1s linear;
+    }
+
+    .audio-time {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+    }
+
+    .audio-speed-control {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .audio-speed-control label {
+        color: var(--text-secondary);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .audio-speed-control select {
+        padding: 10px 16px;
+        border: 2px solid var(--border-medium);
+        border-radius: var(--radius-md);
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-normal);
+    }
+
+    .audio-speed-control select:hover {
+        border-color: var(--accent-cyan);
+    }
+
+    .audio-speed-control select:focus {
+        outline: none;
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 0 3px rgba(100, 210, 255, 0.2);
+    }
+
+    .audio-extra-controls {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* ============================================
+       LYRICS STYLES (استایل متن و ترجمه)
+       ============================================ */
+    .lyrics-section {
+        background: var(--bg-elevated);
+        border: 2px solid var(--border-medium);
+        border-radius: var(--radius-xl);
+        padding: 24px;
+        margin-top: 24px;
+    }
+
+    .lyrics-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--border-medium);
+    }
+
+    .lyrics-header h4 {
+        color: var(--accent-purple);
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .lyrics-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lyric-line {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        border-radius: var(--radius-lg);
+        background: var(--bg-card);
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        opacity: 0.6;
+    }
+
+    .lyric-line.active {
+        opacity: 1;
+        background: linear-gradient(135deg, rgba(100, 210, 255, 0.1), rgba(102, 126, 234, 0.1));
+        border-color: var(--accent-cyan);
+        box-shadow: 0 4px 16px rgba(100, 210, 255, 0.2);
+        transform: translateX(8px);
+    }
+
+    .speaker-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        min-width: 80px;
+    }
+
+    .speaker-badge img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 3px solid var(--border-medium);
+        object-fit: cover;
+    }
+
+    .lyric-line.active .speaker-badge img {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 16px rgba(100, 210, 255, 0.5);
+    }
+
+    .speaker-badge span {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--text-secondary);
+    }
+
+    .lyric-text {
+        flex: 1;
+    }
+
+    .lyric-german {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .lyric-german .word {
+        display: inline-block;
+        padding: 2px 4px;
+        margin: 0 2px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .lyric-german .word.highlight {
+        background: var(--accent-yellow);
+        color: var(--bg-primary);
+        transform: scale(1.1);
+        font-weight: 900;
+    }
+
+    .lyric-persian {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+    }
+
+    /* Speaker Badge Colors */
+    .nicole-badge img {
+        border-color: var(--accent-purple);
+    }
+
+    .paco-badge img {
+        border-color: var(--accent-pink);
+    }
+
+    .yaco-badge img {
+        border-color: var(--accent-green);
+    }
+
+    /* ============================================
+       RESPONSIVE (واکنش‌پذیری برای موبایل)
+       ============================================ */
+    @media (max-width: 768px) {
+        .audio-extra-controls {
+            justify-content: center;
+        }
+
+        .audio-btn {
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .lyric-line {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .speaker-badge {
+            flex-direction: row;
+            min-width: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .audio-player-section {
+            padding: 16px;
+        }
+
+        .audio-btn {
+            padding: 8px 12px;
+            font-size: 0.85rem;
+        }
+
+        .play-pause-btn {
+            padding: 12px 24px;
+            font-size: 1.2rem;
+        }
+
+        .lyric-line {
+            padding: 12px;
+        }
+    }
     </style>
