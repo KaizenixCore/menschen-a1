@@ -870,7 +870,7 @@ function renderWordCards(containerId, category) {
     const words = allWords.filter(w => w.category === category);
 
     container.innerHTML = words.map(w => `
-        <div class="word-card" onclick="speakGerman('${w.german.replace(/'/g, "\\'")}')">
+        <div class="word-card" onclick="playWordAudio(${w.id})">
             <span class="word-category-badge">${getCategoryLabel(w.category)}</span>
             <div class="word-card-image">
                 <img src="${w.image}" alt="${w.german}" onerror="this.style.display='none'">
@@ -879,7 +879,7 @@ function renderWordCards(containerId, category) {
             <div class="word-card-body">
                 <div class="word-card-header">
                     <div class="word-german">${w.german}</div>
-                    <button class="word-sound-btn" onclick="event.stopPropagation(); speakGerman('${w.example.replace(/'/g, "\\'")}')">
+                    <button class="word-sound-btn" onclick="event.stopPropagation(); playWordExample(${w.id})">
                         💬
                     </button>
                 </div>
@@ -898,6 +898,54 @@ function renderWordCards(containerId, category) {
     `).join('');
 }
 
+/**
+ * پخش صدای کلمه با استفاده از ID
+ */
+function playWordAudio(wordId) {
+    const word = allWords.find(w => w.id === wordId);
+    if (!word) return;
+
+    // اگر فایل صوتی محلی داره
+    if (word.audio) {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio = null;
+        }
+
+        currentAudio = new Audio(word.audio);
+        currentAudio.volume = 1;
+
+        currentAudio.onended = () => {
+            currentAudio = null;
+        };
+
+        currentAudio.onerror = () => {
+            console.warn('⚠️ فایل صوتی یافت نشد:', word.audio);
+            showToast('⚠️ فایل صوتی یافت نشد، از TTS استفاده می‌شود', 'error');
+            speakGerman(word.german);
+        };
+
+        currentAudio.play().catch(() => {
+            speakGerman(word.german);
+        });
+
+        showToast(`🔊 ${word.german}`, 'success');
+    } else {
+        // اگر فایل محلی نداره، از TTS استفاده کن
+        speakGerman(word.german);
+    }
+}
+
+/**
+ * پخش مثال کلمه
+ */
+function playWordExample(wordId) {
+    const word = allWords.find(w => w.id === wordId);
+    if (!word) return;
+
+    speakGerman(word.example);
+    showToast(`💬 ${word.example}`, 'success');
+}
 function getCategoryLabel(category) {
     const labels = {
         'greeting': 'سلام',
