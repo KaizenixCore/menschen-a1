@@ -304,85 +304,51 @@ function closeSidebar() {
 }
 
 // ============================================
-// TEXT-TO-SPEECH - صدای آلمانی (اصلاح شده)
+// TEXT-TO-SPEECH - صدای واقعی آلمانی
 // ============================================
-let germanVoice = null;
-
-// پیدا کردن صدای آلمانی
-function findGermanVoice() {
-    const voices = speechSynthesis.getVoices();
-    
-    // اول دنبال صدای آلمانی بگرد
-    germanVoice = voices.find(v => v.lang === 'de-DE') ||
-                  voices.find(v => v.lang.startsWith('de')) ||
-                  voices.find(v => v.name.toLowerCase().includes('german')) ||
-                  null;
-    
-    if (germanVoice) {
-        console.log('✅ صدای آلمانی پیدا شد:', germanVoice.name);
-    } else {
-        console.log('⚠️ صدای آلمانی پیدا نشد، از صدای پیش‌فرض استفاده می‌شود');
-    }
-}
-
-// وقتی صداها لود شدن
-if ('speechSynthesis' in window) {
-    speechSynthesis.onvoiceschanged = findGermanVoice;
-    // برای مرورگرهایی که سریع لود می‌کنن
-    setTimeout(findGermanVoice, 100);
-    setTimeout(findGermanVoice, 500);
-    setTimeout(findGermanVoice, 1000);
-}
-
 function speakGerman(text, callback = null) {
-    // اگه متن خالی بود، برگرد
-    if (!text || text.trim() === '') {
-        if (callback) callback();
-        return;
-    }
-    
-    // متوقف کردن صدای قبلی
-    speechSynthesis.cancel();
-    
-    // اگه currentAudio داشتیم، متوقفش کن
     if (currentAudio) {
         currentAudio.pause();
         currentAudio = null;
     }
-    
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'de-DE';
-    utterance.rate = 0.8;  // کمی آهسته‌تر برای یادگیری بهتر
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    
-    // استفاده از صدای آلمانی اگه پیدا شده
-    if (germanVoice) {
-        utterance.voice = germanVoice;
-    }
-    
-    utterance.onend = () => {
-        console.log('✅ پخش تمام شد:', text);
+
+    speechSynthesis.cancel();
+
+    // Google Translate TTS - صدای واقعی آلمانی
+    const googleTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=de&client=tw-ob&q=${encodeURIComponent(text)}`;
+
+    currentAudio = new Audio(googleTTS);
+    currentAudio.volume = 1;
+
+    currentAudio.onended = () => {
+        currentAudio = null;
         if (callback) callback();
     };
-    
-    utterance.onerror = (e) => {
-        console.log('❌ خطا در پخش صدا:', e);
-        if (callback) callback();
+
+    currentAudio.onerror = () => {
+        speakWithWebSpeech(text, callback);
     };
-    
-    // شروع پخش
-    speechSynthesis.speak(utterance);
-    console.log('🔊 در حال پخش:', text);
+
+    currentAudio.play().catch(() => {
+        speakWithWebSpeech(text, callback);
+    });
 }
 
-// تابع کمکی برای پخش با تأخیر
-function speakGermanWithDelay(text, delay = 500) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            speakGerman(text, resolve);
-        }, delay);
-    });
+function speakWithWebSpeech(text, callback = null) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'de-DE';
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+
+    const voices = speechSynthesis.getVoices();
+    const germanVoice = voices.find(v => v.lang.includes('de'));
+    if (germanVoice) utterance.voice = germanVoice;
+
+    utterance.onend = () => {
+        if (callback) callback();
+    };
+
+    speechSynthesis.speak(utterance);
 }
 
 // ============================================
