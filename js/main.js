@@ -870,23 +870,31 @@ function renderWordCards(containerId, category) {
     const words = allWords.filter(w => w.category === category);
 
     container.innerHTML = words.map(w => `
-        <div class="word-card" onclick="playWordAudio(${w.id})">
+        <div class="word-card">
             <span class="word-category-badge">${getCategoryLabel(w.category)}</span>
-            <div class="word-card-image">
+            
+            <!-- بخش تصویر - کلیک روی این فقط کلمه رو میگه -->
+            <div class="word-card-image" onclick="playWordAudio(${w.id})">
                 <img src="${w.image}" alt="${w.german}" onerror="this.style.display='none'">
                 <div class="word-card-emoji">${w.emoji}</div>
             </div>
+            
             <div class="word-card-body">
-                <div class="word-card-header">
+                <!-- بخش کلمه آلمانی - کلیک روی این فقط کلمه رو میگه -->
+                <div class="word-card-header" onclick="playWordAudio(${w.id})">
                     <div class="word-german">${w.german}</div>
-                    <button class="word-sound-btn" onclick="event.stopPropagation(); playWordExample(${w.id})">
-                        💬
+                    <button class="word-sound-btn" onclick="event.stopPropagation(); playWordAudio(${w.id})">
+                        🔊
                     </button>
                 </div>
-                <div class="word-ipa">${w.ipa}</div>
-                <div class="word-pron">🔊 ${w.pron}</div>
+                
+                <!-- تلفظ - کلیک روی این فقط کلمه رو میگه -->
+                <div class="word-ipa" onclick="playWordAudio(${w.id})">${w.ipa}</div>
+                <div class="word-pron" onclick="playWordAudio(${w.id})">🔊 ${w.pron}</div>
                 <div class="word-meaning">${w.meaning}</div>
-                <div class="word-example">
+                
+                <!-- بخش مثال - کلیک روی این جمله کامل رو میگه -->
+                <div class="word-example" onclick="playWordExample(${w.id})" style="cursor: pointer;">
                     <div class="word-example-de">
                         <span>🗣️</span>
                         ${w.example}
