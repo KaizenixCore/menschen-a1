@@ -22,7 +22,7 @@ const allWords = [
     category: 'greeting', 
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
     audio: 'audio/lesson1/vocab/id-1.mp3',
-    audioExample: 'audio/lesson1/vocab/hallo-example.mp3'
+    audioExample: 'audio/lesson1/vocab/id-1-E.mp3'
 },
     { 
         id: 2, 
