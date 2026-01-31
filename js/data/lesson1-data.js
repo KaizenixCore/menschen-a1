@@ -35,8 +35,8 @@ const allWords = [
         exampleFa: 'صبح بخیر، آقای اشمیت!', 
         category: 'greeting', 
         image: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400&q=80',
-        audio: 'audio/lesson1/vocab/guten-morgen.mp3',
-        audioExample: 'audio/lesson1/vocab/Guten-Morgen-Herr-Schmidt.mp3'
+        audio: 'audio/lesson1/vocab/id-2.mp3',
+        audioExample: 'audio/lesson1/vocab/id-2-E.mp3'
     
     },
     { 
@@ -50,8 +50,8 @@ const allWords = [
         exampleFa: 'روز بخیر، خانم مولر!', 
         category: 'greeting', 
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80',
-        audio: 'audio/lesson1/vocab/guten-tag.mp3',
-        audioExample: 'audio/lesson1/vocab/Guten-Tag-Frau-Müller.mp3'
+        audio: 'audio/lesson1/vocab/id-3.mp3',
+        audioExample: 'audio/lesson1/vocab/id-3-E.mp3'
     },
     { 
         id: 4, 
@@ -64,8 +64,8 @@ const allWords = [
         exampleFa: 'عصر بخیر! خوشحالم می‌بینمتان.', 
         category: 'greeting', 
         image: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=400&q=80',
-        audio: 'audio/lesson1/vocab/guten-abend.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Guten-Abend-Schön-Sie-zu-sehen.mp3'
+        audio: 'audio/lesson1/vocab/id-4.mp3',
+        audioExample: 'audio/lesson1/vocab/id-4-E.mp3'
     },
     { 
         id: 5, 
@@ -78,8 +78,8 @@ const allWords = [
         exampleFa: 'شب بخیر! خوب بخواب!', 
         category: 'greeting', 
         image: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?w=400&q=80',
-        audio: 'audio/lesson1/vocab/gute-nacht.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Gute-Nacht-Schlaf-gut.mp3'
+        audio: 'audio/lesson1/vocab/id-5.mp3',
+        audioExample: 'audio/lesson1/vocab/id-5-E.mp3'
     },
 
     // Farewell - خداحافظی‌ها
@@ -94,8 +94,8 @@ const allWords = [
         exampleFa: 'خداحافظ، تا فردا!', 
         category: 'farewell', 
         image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/auf-wiedersehen.mp3',
-        audioExample: 'audio/lesson1/vocab/Auf-Wiedersehen-bis-morgen.mp3'
+        audio: 'audio/lesson1/vocab/id-6.mp3',
+        audioExample: 'audio/lesson1/vocab/id-6-E.mp3'
     },
     { 
         id: 7, 
@@ -108,8 +108,8 @@ const allWords = [
         exampleFa: 'خداحافظ! به زودی!', 
         category: 'farewell', 
         image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/tschuess.mp3',
-        audioExample: 'audio/lesson1/vocab/Tschüs-Bis-bald.mp3'
+        audio: 'audio/lesson1/vocab/id-7.mp3',
+        audioExample: 'audio/lesson1/vocab/id-7-E.mp3'
     },
 
     // Pronouns - ضمایر شخصی
@@ -124,8 +124,8 @@ const allWords = [
         exampleFa: 'من پیمان هستم.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ich.mp3',
-        audioExample: 'audio/lesson1/vocab/Ich-bin-Peyman.mp3'
+        audio: 'audio/lesson1/vocab/id-8.mp3',
+        audioExample: 'audio/lesson1/vocab/id-8-E.mp3'
     },
     { 
         id: 9, 
@@ -138,8 +138,8 @@ const allWords = [
         exampleFa: 'تو دوست من هستی.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
-        audio: 'audio/lesson1/vocab/du.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Du-bist-mein-Freund.mp3'
+        audio: 'audio/lesson1/vocab/id-9.mp3',
+        audioExample: 'audio/lesson1/vocab/id-9-E.mp3'
     },
     { 
         id: 10, 
@@ -152,8 +152,8 @@ const allWords = [
         exampleFa: 'شما آقای اشمیت هستید.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-        audio: 'audio/lesson1/vocab/sie-formal.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-sind-Herr-Schmidt.mp3'
+        audio: 'audio/lesson1/vocab/id-10.mp3',
+        audioExample: 'audio/lesson1/vocab/id-10-E.mp3'
     },
     { 
         id: 11, 
@@ -166,8 +166,8 @@ const allWords = [
         exampleFa: 'او از ایران می‌آید.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-        audio: 'audio/lesson1/vocab/er.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Er-kommt-aus-Iran.mp3'
+        audio: 'audio/lesson1/vocab/id-11.mp3',
+        audioExample: 'audio/lesson1/vocab/id-11-E.mp3'
     },
     { 
         id: 12, 
@@ -180,8 +180,8 @@ const allWords = [
         exampleFa: 'او از آلمان می‌آید.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-        audio: 'audio/lesson1/vocab/sie-informal.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-12.mp3',
+        audioExample: 'audio/lesson1/vocab/id-12-E.mp3'
     },
     { 
         id: 13, 
@@ -194,8 +194,8 @@ const allWords = [
         exampleFa: 'آن زیباست.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80',
-        audio: 'audio/lesson1/vocab/es.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-13.mp3',
+        audioExample: 'audio/lesson1/vocab/id-13-E.mp3'
     },
     { 
         id: 14, 
@@ -208,8 +208,8 @@ const allWords = [
         exampleFa: 'ما دوست هستیم.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wir.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-14.mp3',
+        audioExample: 'audio/lesson1/vocab/id-14-E.mp3'
     },
     { 
         id: 15, 
@@ -222,8 +222,8 @@ const allWords = [
         exampleFa: 'شما عالی هستید!', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ihr.mp3'  ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-15.mp3',
+        audioExample: 'audio/lesson1/vocab/id-15-E.mp3'
     },
     { 
         id: 16, 
@@ -236,8 +236,8 @@ const allWords = [
         exampleFa: 'آنها از اسپانیا می‌آیند.', 
         category: 'pronoun', 
         image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
-        audio: 'audio/lesson1/vocab/sie-plural.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-16.mp3',
+        audioExample: 'audio/lesson1/vocab/id-16-E.mp3'
     },
 
     // Questions - سوالات
@@ -252,8 +252,8 @@ const allWords = [
         exampleFa: 'اسم شما چیست؟ - اسم من اشمیت است.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-heissen-sie.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-17.mp3',
+        audioExample: 'audio/lesson1/vocab/id-17-E.mp3'
     },
     { 
         id: 18, 
@@ -266,8 +266,8 @@ const allWords = [
         exampleFa: 'اسمت چیه؟ - اسم من ماریا است.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-heisst-du.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-18.mp3',
+        audioExample: 'audio/lesson1/vocab/id-18-E.mp3'
     },
     { 
         id: 19, 
@@ -280,8 +280,8 @@ const allWords = [
         exampleFa: 'شما کی هستید؟ - من آقای اشمیت هستم.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wer-sind-sie.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-19.mp3',
+        audioExample: 'audio/lesson1/vocab/id-19-E.mp3'
     },
     { 
         id: 20, 
@@ -294,8 +294,8 @@ const allWords = [
         exampleFa: 'تو کی هستی؟ - من نیکول هستم.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wer-bist-du.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-20.mp3',
+        audioExample: 'audio/lesson1/vocab/id-20-E.mp3'
     },
     { 
         id: 21, 
@@ -308,8 +308,8 @@ const allWords = [
         exampleFa: 'از کجا می‌آیید؟ - من از ایران می‌آیم.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=400&q=80',
-        audio: 'audio/lesson1/vocab/woher-kommen-sie.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-21.mp3',
+        audioExample: 'audio/lesson1/vocab/id-21-E.mp3'
     },
     { 
         id: 22, 
@@ -322,8 +322,8 @@ const allWords = [
         exampleFa: 'از کجا می‌آیی؟ - من از مکزیک می‌آیم.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=400&q=80',
-        audio: 'audio/lesson1/vocab/woher-kommst-du.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-22.mp3',
+        audioExample: 'audio/lesson1/vocab/id-22-E.mp3'
     },
     { 
         id: 23, 
@@ -336,8 +336,8 @@ const allWords = [
         exampleFa: 'حال شما چطور است؟ - خوبم، ممنون!', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-geht-es-ihnen.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-23.mp3',
+        audioExample: 'audio/lesson1/vocab/id-23-E.mp3'
     },
     { 
         id: 24, 
@@ -350,8 +350,8 @@ const allWords = [
         exampleFa: 'حالت چطوره؟ - خیلی خوبم!', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-geht-es-dir.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-24.mp3',
+        audioExample: 'audio/lesson1/vocab/id-24-E.mp3'
     },
     { 
         id: 25, 
@@ -364,8 +364,8 @@ const allWords = [
         exampleFa: 'چطوری؟ - بد نیستم.', 
         category: 'question', 
         image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-gehts.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-25.mp3',
+        audioExample: 'audio/lesson1/vocab/id-25-E.mp3'
     },
 
     // Answers - پاسخ‌ها
@@ -380,8 +380,8 @@ const allWords = [
         exampleFa: 'چطوری؟ - خیلی خوبم، ممنون!', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/sehr-gut-danke.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-26.mp3',
+        audioExample: 'audio/lesson1/vocab/id-26-E.mp3'
     },
     { 
         id: 27, 
@@ -394,8 +394,8 @@ const allWords = [
         exampleFa: 'حالتان چطور است؟ - خوبم، ممنون!', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/gut-danke.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-27.mp3',
+        audioExample: 'audio/lesson1/vocab/id-27-E.mp3'
     },
     { 
         id: 28, 
@@ -408,8 +408,8 @@ const allWords = [
         exampleFa: 'چطوری؟ - بد نیستم.', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/es-geht.mp3'  ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-28.mp3',
+        audioExample: 'audio/lesson1/vocab/id-28-E.mp3'
     },
     { 
         id: 29, 
@@ -422,8 +422,8 @@ const allWords = [
         exampleFa: 'چطوری؟ - زیاد خوب نیستم.', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/nicht-so-gut.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-29.mp3',
+        audioExample: 'audio/lesson1/vocab/id-29-E.mp3'
     },
     { 
         id: 30, 
@@ -436,8 +436,8 @@ const allWords = [
         exampleFa: 'تو چطوری؟ - منم خوبم.', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/auch-gut.mp3'  ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-30.mp3',
+        audioExample: 'audio/lesson1/vocab/id-30-E.mp3'
     },
     { 
         id: 31, 
@@ -450,8 +450,8 @@ const allWords = [
         exampleFa: 'خوبم، ممنون!', 
         category: 'answer', 
         image: 'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/danke.mp3'  ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-31.mp3',
+        audioExample: 'audio/lesson1/vocab/id-31-E.mp3'
     },
 
     // Phrases - عبارات پرکاربرد
@@ -466,8 +466,8 @@ const allWords = [
         exampleFa: 'این پاکو است.', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-        audio: 'audio/lesson1/vocab/das-ist.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-32.mp3',
+        audioExample: 'audio/lesson1/vocab/id-32-E.mp3'
     },
     { 
         id: 33, 
@@ -480,8 +480,8 @@ const allWords = [
         exampleFa: 'اسم من پاکو رودریگز است.', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80',
-        audio: 'audio/lesson1/vocab/mein-name-ist.mp3',
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-33.mp3',
+        audioExample: 'audio/lesson1/vocab/id-33-E.mp3'
     },
     { 
         id: 34, 
@@ -494,8 +494,8 @@ const allWords = [
         exampleFa: 'اسم من پاکو است.', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ich-heisse.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-34.mp3',
+        audioExample: 'audio/lesson1/vocab/id-34-E.mp3'
     },
     { 
         id: 35, 
@@ -508,8 +508,8 @@ const allWords = [
         exampleFa: 'من نیکول هستم.', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ich-bin.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-35.mp3',
+        audioExample: 'audio/lesson1/vocab/id-35-E.mp3'
     },
     { 
         id: 36, 
@@ -522,8 +522,8 @@ const allWords = [
         exampleFa: 'من از ایران می‌آیم.', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ich-komme-aus.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-36.mp3',
+        audioExample: 'audio/lesson1/vocab/id-36-E.mp3'
     },
     { 
         id: 37, 
@@ -536,8 +536,8 @@ const allWords = [
         exampleFa: 'هجی می‌کنم: A-l-i', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80',
-        audio: 'audio/lesson1/vocab/ich-buchstabiere.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Sie-kommt-aus-Deutschland.mp3'
+        audio: 'audio/lesson1/vocab/id-37.mp3',
+        audioExample: 'audio/lesson1/vocab/id-37-E.mp3'
     },
     { 
         id: 38, 
@@ -550,8 +550,8 @@ const allWords = [
         exampleFa: 'ببخشید؟ می‌توانید تکرار کنید؟', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80',
-        audio: 'audio/lesson1/vocab/wie-bitte.mp3' ,
-        audioExample: 'audio/lesson1/vocab/Wie-bitte-Können-Sie-das-wiederholen.mp3'
+        audio: 'audio/lesson1/vocab/id-38.mp3',
+        audioExample: 'audio/lesson1/vocab/id-38-E.mp3'
     },
     { 
         id: 39, 
@@ -564,8 +564,8 @@ const allWords = [
         exampleFa: 'روز بخیر، آقای اشمیت!', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-        audio: 'audio/lesson1/vocab/herr.mp3',
-        audioExample: 'audio/lesson1/vocab/Guten-Tag-Herr-Schmidt.mp3'
+        audio: 'audio/lesson1/vocab/id-39.mp3',
+        audioExample: 'audio/lesson1/vocab/id-39-E.mp3'
     },
     { 
         id: 40, 
@@ -578,8 +578,8 @@ const allWords = [
         exampleFa: 'روز بخیر، خانم واختر!', 
         category: 'phrase', 
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-        audio: 'audio/lesson1/vocab/frau.mp3',
-        audioExample: 'audio/lesson1/vocab/Guten-Tag-Frau-Wachter.mp3'
+        audio: 'audio/lesson1/vocab/id-40.mp3',
+        audioExample: 'audio/lesson1/vocab/id-40-E.mp3'
     }
 ];
 
