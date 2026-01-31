@@ -2106,5 +2106,28 @@
 
 <!-- بعد کدهای اصلی -->
 <script src="js/main.js"></script>
+    <!-- نوار ناوبری پایین (Bottom Navigation) -->
+<nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">
+        <span class="nav-icon">🏠</span>
+        <span>خانه</span>
+    </a>
+    <a href="lesson1.html" class="bottom-nav-item active">
+        <span class="nav-icon">📚</span>
+        <span>درس‌ها</span>
+    </a>
+    <a href="#" class="bottom-nav-item" onclick="showTab('flashcard', this); return false;">
+        <span class="nav-icon">🎴</span>
+        <span>فلش‌کارت</span>
+    </a>
+    <a href="#" class="bottom-nav-item" onclick="showTab('quiz', this); return false;">
+        <span class="nav-icon">❓</span>
+        <span>آزمون</span>
+    </a>
+    <a href="#" class="bottom-nav-item" onclick="toggleSidebar(); return false;">
+        <span class="nav-icon">⚙️</span>
+        <span>بیشتر</span>
+    </a>
+</nav>
 </body>
 </html>
