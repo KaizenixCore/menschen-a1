@@ -1,0 +1,368 @@
+/* ============================================
+   LESSON 6 - SPECIFIC STYLES
+   Menschen A1.1 - Ich brauche kein Büro
+   ============================================ */
+
+/* ============================================
+   FILL EXERCISE (تمرین پر کردنی آکوزاتیو)
+   ============================================ */
+.fill-exercise {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fill-item {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.fill-item:hover {
+    border-color: var(--accent-cyan);
+}
+
+.fill-sentence {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.fill-select {
+    padding: 8px 16px;
+    border: 2px solid var(--accent-cyan);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    min-width: 100px;
+}
+
+.fill-select:hover {
+    border-color: var(--accent-purple);
+    background: var(--bg-hover);
+}
+
+.fill-select:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(191, 90, 242, 0.2);
+}
+
+.fill-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.fill-feedback {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   PLURAL EXERCISE (تمرین جمع بستن)
+   ============================================ */
+.plural-exercise {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.plural-item {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.plural-item:hover {
+    border-color: var(--accent-purple);
+}
+
+.plural-singular {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    white-space: nowrap;
+}
+
+.plural-select {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 16px;
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.plural-select:hover {
+    border-color: var(--accent-cyan);
+}
+
+.plural-select:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(191, 90, 242, 0.2);
+}
+
+.plural-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   PHONE EXERCISE (تمرین تلفنی)
+   ============================================ */
+.phone-exercise {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.phone-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phone-item {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.phone-item:hover {
+    border-color: var(--accent-cyan);
+}
+
+.phone-situation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.phone-icon {
+    font-size: 1.5rem;
+}
+
+.phone-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.phone-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.phone-option:hover {
+    border-color: var(--accent-cyan);
+    background: var(--bg-hover);
+}
+
+.phone-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent-purple);
+}
+
+.phone-option span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.phone-feedback {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* ============================================
+   VERB EXERCISE (تمرین صرف فعل)
+   ============================================ */
+.verb-exercise {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.verb-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.verb-item {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.verb-item:hover {
+    border-color: var(--accent-purple);
+}
+
+.verb-sentence {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.verb-select {
+    padding: 8px 16px;
+    border: 2px solid var(--accent-purple);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    min-width: 120px;
+}
+
+.verb-select:hover {
+    border-color: var(--accent-cyan);
+    background: var(--bg-hover);
+}
+
+.verb-select:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(100, 210, 255, 0.2);
+}
+
+.verb-feedback {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   LESSON 6 COLOR ACCENTS
+   ============================================ */
+/* رنگ‌های خاص برای تمایز بصری درس ۶ */
+.grammar-box.pink {
+    border-color: rgba(255, 55, 95, 0.3);
+    background: linear-gradient(135deg, var(--bg-elevated), rgba(255, 55, 95, 0.05));
+}
+
+.grammar-box.cyan {
+    border-color: rgba(100, 210, 255, 0.3);
+    background: linear-gradient(135deg, var(--bg-elevated), rgba(100, 210, 255, 0.05));
+}
+
+/* ============================================
+   RESPONSIVE - LESSON 6 SPECIFIC
+   ============================================ */
+@media (max-width: 768px) {
+    .fill-sentence {
+        font-size: 1rem;
+    }
+    
+    .fill-select {
+        min-width: 80px;
+        padding: 6px 12px;
+    }
+    
+    .plural-exercise {
+        grid-template-columns: 1fr;
+    }
+    
+    .plural-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .plural-select {
+        width: 100%;
+    }
+    
+    .phone-option {
+        padding: 12px 16px;
+    }
+    
+    .verb-sentence {
+        font-size: 1rem;
+    }
+    
+    .verb-select {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fill-item,
+    .plural-item,
+    .phone-item,
+    .verb-item {
+        padding: 16px;
+    }
+    
+    .phone-situation {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: right;
+    }
+}
